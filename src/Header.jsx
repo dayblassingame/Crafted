@@ -8,13 +8,15 @@ export default function Header(){
     const [menu, setMenu] = useState(false);
 
     return(
-        <header>
-             <span className="CC-C-logo_span ">
-                <a href="#"><img src={Logo} alt="Logo" className="CC-C-logo_img"/></a>
-            </span>
-            <button onClick={()=>{setMenu(!menu);}}>
-                <FontAwesomeIcon icon={menu ? faX : faBars} />
-            </button>
+        <header> 
+            <div className="CC-C-header">
+                <span className="CC-C-logo_span">
+                    <a href="#"><img src={Logo} alt="Logo" className="CC-C-logo_img"/></a>
+                </span>
+                <button className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
+                    <FontAwesomeIcon icon={menu ? faX : faBars} />
+                </button>
+            </div>
             <nav className={menu ? 'display_block': 'display_none'}>
                 <span>
                     <a href='#'>Discover New</a>
