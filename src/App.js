@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './Header';
 
 export function App(){
     return(
         <div>
-            <h1>Crafted Cocktails</h1>
+           <Header> </Header>
         </div>
     )
 }
