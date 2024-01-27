@@ -17,19 +17,19 @@ export default function Header(){
                     <FontAwesomeIcon icon={menu ? faX : faBars} />
                 </button>
             </div>
-            <nav className={menu ? 'display_block': 'display_none'}>
-                <span>
-                    <a href='#'>Discover New</a>
-                </span>
-                <span>
+            <nav className={menu ? 'CC-C-nav_list display_block': 'display_none'}>
+                <li>
+                    <a href='#'>Discover</a>
+                </li>
+                <li>
                     <a href='#'>Search Cocktails</a>
-                </span>
-                <span>
+                </li>
+                <li>
                     <a href='#'>Meet the author</a>
-                </span>
-                <span>
+                </li>
+                <li>
                     <a href='#'>Contact</a>
-                </span>
+                </li>
             </nav>
         </header>
     );
