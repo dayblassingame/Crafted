@@ -7,7 +7,6 @@ module.exports = {
   },
   moduleNameMapper: {
       "\\.(jpg|ico|jpeg|png|gif|svg)$": "<rootDir>/mocks/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
     },
   testEnvironment: 'jsdom',
 };
