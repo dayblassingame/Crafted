@@ -5,7 +5,7 @@ import './App.scss';
 export function App(){
     return(
         <div>
-           <Header> </Header>
+           <Header/>
         </div>
     )
 }

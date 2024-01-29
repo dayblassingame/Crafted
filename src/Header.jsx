@@ -1,8 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import Logo from './images/craftedlogo.png';
+import React, { useState }  from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import logo from "./images/craftedlogo.png";
 
 export default function Header(){
     const [menu, setMenu] = useState(false);
@@ -11,26 +10,32 @@ export default function Header(){
         <header> 
             <div className="CC-C-header">
                 <span className="CC-C-logo_span">
-                    <a href="#"><img src={Logo} alt="Logo" className="CC-C-logo_img"/></a>
+                    <a href="#"><img src={logo} alt="Logo image" className="CC-C-logo_img"/></a>
                 </span>
-                <button className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
+                <button data-testid='navBtn' className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
                     <FontAwesomeIcon icon={menu ? faX : faBars} />
                 </button>
             </div>
-            <nav className={menu ? 'CC-C-nav_list display_block': 'display_none'}>
+            {menu && <Navigation/>}
+        </header>
+    );
+}
+
+export function Navigation(){
+    return(
+        <nav className='CC-C-nav_list'>
                 <li>
-                    <a href='#'>Discover</a>
+                    <a href='#' data-testid='navLink'>Discover</a>
                 </li>
                 <li>
-                    <a href='#'>Search Cocktails</a>
+                    <a href='#' data-testid='navLink'>Search Cocktails</a>
                 </li>
                 <li>
-                    <a href='#'>Meet the author</a>
+                    <a href='#' data-testid='navLink'>Meet the author</a>
                 </li>
                 <li>
-                    <a href='#'>Contact</a>
+                    <a href='#' data-testid='navLink'>Contact</a>
                 </li>
             </nav>
-        </header>
     );
 }
