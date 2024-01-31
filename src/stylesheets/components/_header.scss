@@ -1,0 +1,55 @@
+.CC-C-header{
+    height: 5rem;
+    width: 95%;
+    padding: 5px 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.CC-C-logo_span{
+    height: 4.5rem;
+    width: 50%; 
+
+    .CC-C-logo_img{
+        height: 3.5rem;
+        width: auto;
+    }
+}
+
+.CC-C-nav_btn{
+    width: 15%;
+    height: 4rem;
+
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+}
+
+.CC-C-nav_list{
+    width: 55%;
+    height: 80 vh;
+    padding: 10px;
+    background-color: white;
+    float: right;
+    text-align: left;
+    border-radius: 5px;
+
+    li{
+        display: table;
+        height: 3rem;
+        width: 95%;
+        margin: 0px 10px;
+        list-style: none;
+        
+        border-bottom: 1px solid black;
+
+        a{
+            display: table-cell;
+            vertical-align: middle;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
