@@ -9,17 +9,21 @@
 }
 
 .CC-C-logo_span{
-    height: 4.5rem;
-    width: 50%; 
+    display: inline-block;
+    height: 5rem;
+    width: auto; 
+    margin-top: 1rem;
+    padding-left: 25%;
+    
 
     .CC-C-logo_img{
-        height: 3.5rem;
+        height: 3rem;
         width: auto;
     }
 }
 
 .CC-C-nav_btn{
-    width: 15%;
+    width: 10%;
     height: 4rem;
 
     background-color: transparent;
@@ -30,13 +34,12 @@
 .CC-C-nav_list{
     position: sticky;
     z-index: 2;
-    width: 55%;
+    width: 75%;
     height: 90vh;
     padding: 10px;
-    background-color: white;
+    background-color: rgba(255,255,255, 0.9);
     float: right;
     text-align: left;
-    border-radius: 5px;
 
     li{
         display: table;
