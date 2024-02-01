@@ -37,10 +37,10 @@
     width: 75%;
     height: 90vh;
     padding: 10px;
-    background-color: rgba(255,255,255, 0.9);
-    float: right;
+    background-color: rgba(255,255,255, 1);
     text-align: left;
 
+    animation: slideIn 2s 0s;
     li{
         display: table;
         height: 3rem;
@@ -48,13 +48,21 @@
         margin: 0px 10px;
         list-style: none;
         
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #4a4a48;
 
         a{
             display: table-cell;
             vertical-align: middle;
             text-decoration: none;
-            color: black;
+            color: #4a4a48;
         }
+    }
+}
+
+@keyframes slideIn{
+    from{
+        margin-left: 100%;
+    }to{
+        margin-left: 0%;
     }
 }
