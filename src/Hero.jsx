@@ -23,13 +23,16 @@ export default function Hero(){
 
     if(!isLoading){
         return(
-            <div>
+            <div className="p-C-hero">
                 {displayCocktail.map((cocktail) => (
-                    <span key={cocktail.idDrink}>
-                        <h1>Sip into Bliss: Explore Our Signature Cocktails</h1>
+                    <div className='p-C-hero_wrapper' key={cocktail.idDrink}>
                         <img src={cocktail.strDrinkThumb} alt="Greyhound Cocktail"/>
-                        <button>Discover New</button>
-                    </span>
+                        <span className='p-C-hero_heading'>
+                            <h2>Sip into Bliss</h2>
+                            <h3>Explore Our Signature Cocktails</h3>
+                            <button>Discover</button>
+                        </span>
+                    </div>
                 ))}
             </div>
          );
