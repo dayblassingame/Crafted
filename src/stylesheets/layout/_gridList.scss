@@ -1,0 +1,42 @@
+.p-L-gridList{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+
+    span{
+        display: flex;
+        justify-content: space-around;
+        width: 95%;
+        margin: 1rem 0.3rem;
+
+        input[type="text"]{
+            display: inline-block;
+            height: 3rem;
+            width: 80%;
+            border-radius: 0px;
+            border: 1px solid $orange;
+            padding: 5px;
+            font-size: 1rem;
+            color: $grey;
+
+            &:focus{
+                outline: 1px solid $orange;
+                border: 1px solid $orange;
+            }
+        }
+
+        button{
+            width: 15%;
+            border: 1px solid $orange;
+            background-color: $white;
+            color: $orange;
+
+            &:focus{
+                background-color: $orange;
+                color: $white;
+            }
+
+        }
+    }
+}
