@@ -1,25 +1,22 @@
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import Loading from './Loading';
+import { fetchData } from "./Api";
+
 
 export default function Hero(){
-    const[displayCocktail, setDisplayCocktail] = useState([]);
-    const [isLoading, setLoading] = useState(true);
     const displayURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=greyhound';
 
-    const fetchData = useCallback((url) => {
-        setLoading(true);
-
-        axios  
-            .get(url)
-            .then((response) =>{
-                setDisplayCocktail(response.data.drinks);
-            }).catch((e)=>{console.log(e)})
-            .finally(() => setLoading(false))
-    },[])
+    const[displayCocktail, setDisplayCocktail] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetchData(displayURL);
-    },[fetchData])
+        fetchData(displayURL).then(res => {
+            setDisplayCocktail(res)
+            setLoading(false);
+        })
+        //setDisplayCocktail(props(displayURL));
+    },[])
 
     if(!isLoading){
         return(
@@ -38,9 +35,7 @@ export default function Hero(){
          );
     }else{
         return(
-            <div>
-                <h1>Cannot Load Page</h1>
-            </div>
+            <Loading/>
         )
     }
 }
