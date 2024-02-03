@@ -5,17 +5,16 @@ import { fetchData } from "./Api";
 
 
 export default function Hero(){
-    const displayURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=greyhound';
+    const apiEndpoint = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=greyhound';
 
     const[displayCocktail, setDisplayCocktail] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetchData(displayURL).then(res => {
+        fetchData(apiEndpoint).then(res => {
             setDisplayCocktail(res)
             setLoading(false);
         })
-        //setDisplayCocktail(props(displayURL));
     },[])
 
     if(!isLoading){

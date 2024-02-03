@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from './Header';
 import './App.scss';
 import Hero from './Hero';
-import axios from 'axios';
+import GridList from './GridList';
 
 export function App(){
 
@@ -10,7 +10,8 @@ export function App(){
         <div>
            <Header/>
            <main>
-                <Hero/>:
+                {/* <Hero/> */}
+                <GridList/>
             </main>
         </div>
     )
