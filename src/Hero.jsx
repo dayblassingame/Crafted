@@ -4,7 +4,7 @@ import axios from "axios";
 export default function Hero(){
     const[displayCocktail, setDisplayCocktail] = useState([]);
     const [isLoading, setLoading] = useState(true);
-    const displayURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=greyhound';
+    const displayURL = 'https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=greyhound';
 
     const fetchData = useCallback((url) => {
         setLoading(true);
@@ -39,7 +39,7 @@ export default function Hero(){
     }else{
         return(
             <div>
-                <h1>Cannot Load Page</h1>
+                <h1>Loading</h1>
             </div>
         )
     }
