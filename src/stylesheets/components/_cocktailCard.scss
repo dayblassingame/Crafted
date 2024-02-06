@@ -1,7 +1,8 @@
 .p-C-cocktailCard_wrapper{
-    height: 35%;
+    height: auto;
     width: 45%;
     margin: 0.5rem 0.5rem;
+    padding: 5px 0px;
     border-radius: 9px;
     background-color: $lightgrey;
     overflow: hidden;
@@ -15,7 +16,7 @@
     h3{
         display: block;
         width: 100%;
-        height: 2rem;
+        height: auto;
         padding: 0px 10px;
         margin: 10px 0px;
         text-align: left;

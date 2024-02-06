@@ -4,7 +4,7 @@ import Loading from './Loading';
 import { fetchData } from "./Api";
 
 export default function Hero(){
-    const apiEndpoint = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=greyhound';
+    const apiEndpoint = 'https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=greyhound';
 
     const[displayCocktail, setDisplayCocktail] = useState([]);
     const [isLoading, setLoading] = useState(true);
