@@ -16,7 +16,6 @@ export default function Footer(){
                 <a href="https://www.apache.org/licenses/">License</a>
                 <p>@2024 Day Blassingame</p>
             </span>
-            
         </div>
     )
 }
