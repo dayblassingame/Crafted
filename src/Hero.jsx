@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import Loading from "./Loading";
 
 export default function Hero(){
     const[displayCocktail, setDisplayCocktail] = useState([]);
@@ -8,7 +9,6 @@ export default function Hero(){
 
     const fetchData = useCallback((url) => {
         setLoading(true);
-
         axios  
             .get(url)
             .then((response) =>{
@@ -26,7 +26,7 @@ export default function Hero(){
             <div className="p-C-hero">
                 {displayCocktail.map((cocktail) => (
                     <div className='p-C-hero_wrapper' key={cocktail.idDrink}>
-                        <img src={cocktail.strDrinkThumb} alt="Greyhound Cocktail"/>
+                        <img data-testid='heroApiImg' src={cocktail.strDrinkThumb} alt="Greyhound Cocktail"/>
                         <span className='p-C-hero_heading'>
                             <h2>Sip into Bliss</h2>
                             <h3>Explore Our Signature Cocktails</h3>
@@ -38,9 +38,7 @@ export default function Hero(){
          );
     }else{
         return(
-            <div>
-                <h1>Loading</h1>
-            </div>
+            <Loading/>
         )
     }
 }
