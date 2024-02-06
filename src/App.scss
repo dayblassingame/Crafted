@@ -3,5 +3,14 @@
 @import './stylesheets/utilities/utilities.scss';
 @import './stylesheets/components/header';
 @import './stylesheets/components/hero';
+@import './stylesheets/components/loading';
+@import './stylesheets/components/footer';
 @import './stylesheets/layout/gridList';
 @import './stylesheets/components/cocktailCard';
+
+main{
+    display: block;
+    position: relative;
+    height: fit-content;
+    width: 100vw;
+}
