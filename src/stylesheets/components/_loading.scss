@@ -1,0 +1,63 @@
+.p-C-loading_wrapper{
+    position: absolute;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    height: 90vh;
+    width: 100vw;
+    
+    background-color: white;
+    text-align: center;
+
+    span{
+        display: block;
+        margin: 45% auto;
+        height: 45vh;
+        width: 80%;
+
+        img{
+            height: auto;
+            width: 100%;
+            margin-top: 3.5rem;
+            animation: slide-from-top 3s 1;
+
+        }
+
+        h1{
+            display: block;
+            margin: auto;
+            background: -webkit-linear-gradient(orange, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1.5rem;
+            opacity: 0;
+
+            font-size: 3.5rem;
+
+            animation-name: fade-in;
+            animation-duration: 2s;
+            animation-delay: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    }
+}
+
+@keyframes slide-from-top {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

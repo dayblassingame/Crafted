@@ -1,11 +1,16 @@
 .CC-C-header{
-    height: 5rem;
-    width: 95%;
-    padding: 5px 5px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    position: fixed;
+    z-index: 9;
+    height: 5rem;
+    width: 100%;
+    padding: 5px 5px;
+
+    background-color: white;
+    
 }
 
 .CC-C-logo_span{
