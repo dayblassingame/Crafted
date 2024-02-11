@@ -4,6 +4,8 @@ import './App.scss';
 import Hero from './Hero';
 import Footer from './Footer';
 import GridList from './GridList';
+import RandomCocktailGenerator from './RandomCocktailGenerator';
+
 
 export function App(){
 
@@ -11,8 +13,9 @@ export function App(){
         <div>
            <Header/>
            <main>
-                {/* <Hero/> */}
-                <GridList/>
+                <Hero/>
+                <RandomCocktailGenerator/>
+                {/* <GridList/> */}
            </main>
            <Footer/>
 
