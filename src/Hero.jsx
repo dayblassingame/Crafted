@@ -18,11 +18,11 @@ export default function Hero(){
 
     if(!isLoading){
         return(
-            <div className="p-C-hero">
+            <div className="CC-C-hero">
                 {displayCocktail.map((cocktail) => (
-                    <div className='p-C-hero_wrapper' key={cocktail.idDrink}>
+                    <div className='CC-C-hero_wrapper' key={cocktail.idDrink}>
                         <img data-testid='heroApiImg' src={cocktail.strDrinkThumb} alt="Greyhound Cocktail"/>
-                        <span className='p-C-hero_heading'>
+                        <span className='CC-C-hero_heading'>
                             <h2>Sip into Bliss</h2>
                             <h3>Explore Our Signature Cocktails</h3>
                             <button>Discover</button>

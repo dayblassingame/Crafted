@@ -68,7 +68,7 @@ export default function GridList (){
 
     if(!isLoading){
         return(
-            <div id='search' className="p-L-gridList">
+            <div id='search' className="CC-L-gridList">
                 <span>
                     <input type='text' placeholder="Search by name or ingredient" value={search} onChange={handleSearch}/>
                     <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
