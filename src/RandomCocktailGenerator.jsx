@@ -21,6 +21,15 @@ export default function RandomCocktailGenerator(){
         }
     }, [randomList])
 
+    const handleRandom = (e) =>{
+        if(index < 9){
+            setIndex(index+1)
+            setCurrentCocktail(randomList[index+1])
+        }else{
+            setRandomList([]);
+        }
+    }
+
 
     return(
         <div>
@@ -45,7 +54,7 @@ export default function RandomCocktailGenerator(){
                 </div>
                 :''
             }
-            <button>Next</button>
+            <button id='next' onClick={handleRandom}>Next</button>
         </div>
     )
 }
