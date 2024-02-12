@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "./Api";
+import Loading from "./Loading";
 
 export default function RandomCocktailGenerator(){
     const apiKey = 'v2/9973533'
+    const headingImgEnpoint = 'https://www.thecocktaildb.com/api/json/' + apiKey + '/search.php?s=rum%20punch';
     const apiEndpoint = 'https://www.thecocktaildb.com/api/json/'+ apiKey+ '/randomselection.php';
     const [randomList, setRandomList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentCocktail, setCurrentCocktail] = useState({});
     const [index, setIndex] = useState(0);
+    const [headingImg, setHeadingImg] =useState({});
+
+    useEffect(()=>{
+        fetchData(headingImgEnpoint)
+        .then(res => {
+            setHeadingImg(res[0]);
+        })
+    },[])
 
     useEffect(()=>{
         if(randomList.length==0){
+            setLoading(true);
             fetchData(apiEndpoint)
             .then(res => {
                 setRandomList(res);
@@ -22,6 +33,8 @@ export default function RandomCocktailGenerator(){
     }, [randomList])
 
     const handleRandom = (e) =>{
+        window.scrollTo(0,0);
+
         if(index < 9){
             setIndex(index+1)
             setCurrentCocktail(randomList[index+1])
@@ -32,8 +45,13 @@ export default function RandomCocktailGenerator(){
 
 
     return(
+        loading ? <Loading/> :
         <div className='CC-C-randomCocktailGenerator_container_wrapper'>
-            <h1>Random Drink Generator</h1>
+            <span className='CC-C-randomCocktailGenerator_heading_img_wrapper'>
+                <img src={headingImg.strDrinkThumb} alt="Rum Punch Cocktail" />
+                <span className="overlay"></span>
+                <h1>Random Refreshments</h1>
+            </span>
 
             {!loading ? 
                 <div className="CC-C-randomCocktailGenerator_container">
@@ -55,6 +73,7 @@ export default function RandomCocktailGenerator(){
                 :''
             }
             <button id='next' onClick={handleRandom}>Next</button>
+
         </div>
     )
 }
@@ -65,14 +84,13 @@ function getIngredients(cocktail){
     let measurement = cocktail['strMeasure' + counter];
     let ingredientArray = [];
 
-    console.log(ingredient)
-
     while(ingredient != null){
-        ingredientArray.push(measurement + ' ' + ingredient);
+        if(measurement ==null)         
+            ingredientArray.push(ingredient);
+        else ingredientArray.push(measurement + ' ' + ingredient);
         counter++;
         ingredient = cocktail['strIngredient' + counter];
         measurement = cocktail['strMeasure' + counter];
-        console.log(ingredientArray);
     }
 
     return ingredientArray;

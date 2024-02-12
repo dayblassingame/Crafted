@@ -6,7 +6,7 @@ export default function Footer(){
         <div className="CC-C-footer_wrapper">
             <h4>Explore Crafted</h4>
             <span className="CC-C-footer_navLinks">
-                <a>Discover</a>
+                <a>Cocktail Generator</a>
                 <a>Search Cocktails</a>
                 <a>Meet the author</a>
                 <a>Contact</a>
