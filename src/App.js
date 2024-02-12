@@ -13,7 +13,7 @@ export function App(){
         <div>
            <Header/>
            <main>
-                <Hero/>
+                {/* <Hero/> */}
                 <RandomCocktailGenerator/>
                 {/* <GridList/> */}
            </main>

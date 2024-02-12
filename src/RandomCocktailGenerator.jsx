@@ -32,11 +32,11 @@ export default function RandomCocktailGenerator(){
 
 
     return(
-        <div>
-            <h1>Let us recommend a cocktail for you</h1>
+        <div className='CC-C-randomCocktailGenerator_container_wrapper'>
+            <h1>Random Drink Generator</h1>
 
             {!loading ? 
-                <div>
+                <div className="CC-C-randomCocktailGenerator_container">
                     <h2>{currentCocktail.strDrink}</h2>
                     <img src={currentCocktail.strDrinkThumb} />
                     <ul>

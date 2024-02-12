@@ -1,0 +1,84 @@
+.CC-C-randomCocktailGenerator_container_wrapper{
+    display: block;
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+    margin-bottom: 4rem;
+
+    h1{
+        display: block;
+        width: 80%;
+        margin: auto;
+        margin-top: 6.5rem;
+        padding-bottom: 1rem;
+
+        line-height: 2.5rem;
+        font-size: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .CC-C-randomCocktailGenerator_container{
+        display: block;
+        width: 90%;
+        margin: 1rem auto;
+        padding: 5%;
+        border: 1px solid $orange;
+        background-color: white;
+        
+
+        h2{
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        
+        img{
+            display: block;
+            width: 90%;
+            height: auto;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+
+        ul{
+            margin-bottom: 1.5rem;
+            line-height: 1.7rem;
+
+            li{
+                font-size: 1.1rem;
+            }
+        }
+
+        label{
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        p{
+            line-height: 1.7rem;
+            font-size: 1.1rem;
+        }
+
+    }
+
+    button{
+        display: block;
+        height: 4rem;
+        width: 50%;
+        margin: 1rem auto;
+
+        background-color: $orange;
+        color: white;
+        font-size: 1.2rem;
+        border: 1px solid $white;
+
+        &:hover{
+            color: $orange;
+            background-color: $white;
+            border: 1px solid $orange;
+        }
+    }
+}
