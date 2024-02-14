@@ -3,8 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import logo from "./images/craftedlogo.png";
 import { Link } from "react-router-dom";
+
 export default function Header(){
     const [menu, setMenu] = useState(false);
+    
+    const closeMenu = () =>{
+        setMenu(false);
+    }
 
     return(
         <header> 
@@ -16,25 +21,26 @@ export default function Header(){
                     <FontAwesomeIcon icon={menu ? faX : faBars} />
                 </button>
             </div>
-            {menu && <Navigation/>}
+            {menu && <Navigation handler={closeMenu} />}
         </header>
     );
 }
 
-export function Navigation(){
+export function Navigation(props){
+    
     return(
         <nav className='CC-C-nav_list'>
                 <li>
-                    <Link to='/random' data-testid='navLink'>Random Cocktail Generator</Link>
+                    <Link to='/random' onClick = {props.handler} data-testid='navLink'>Random Cocktail Generator</Link>
                 </li>
                 <li>
-                    <Link to='/search' data-testid='navLink'>Search Cocktails</Link>
+                    <Link to='/search' onClick = {props.handler} data-testid='navLink'>Search Cocktails</Link>
                 </li>
                 <li>
-                    <a href='#' data-testid='navLink'>Meet the author</a>
+                    <a href='#' onClick = {props.handler} data-testid='navLink'>Meet the author</a>
                 </li>
                 <li>
-                    <a href='#' data-testid='navLink'>Contact</a>
+                    <a href='#' onClick = {props.handler} data-testid='navLink'>Contact</a>
                 </li>
             </nav>
     );
