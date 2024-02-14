@@ -18,14 +18,19 @@
         justify-content: space-between;
         width: 100%;
 
-        a{
+        li{
             width:20%;
-            color: darkgrey;
+            list-style: none;
 
-            &:hover{
-                color: orange;
-                text-decoration: underline;
-                text-decoration-color: orange;
+            a{
+                color: darkgrey;
+                text-decoration: none;
+
+                &:hover{
+                    color: orange;
+                    text-decoration: underline;
+                    text-decoration-color: orange;
+                }
             }
         }
     }
