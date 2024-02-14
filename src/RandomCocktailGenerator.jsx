@@ -52,11 +52,15 @@ export default function RandomCocktailGenerator(){
                 <span className="overlay"></span>
                 <h1>Random Refreshments</h1>
             </span>
+            <h4>Can't decide on a cocktail? Let us choose for you!</h4>
 
             {!loading ? 
                 <div className="CC-C-randomCocktailGenerator_container">
                     <h2>{currentCocktail.strDrink}</h2>
                     <img src={currentCocktail.strDrinkThumb} />
+
+                    <button id='next' onClick={handleRandom}>Choose again</button>
+
                     <ul>
                         <label>Ingredients</label>
                         {getIngredients(currentCocktail).map((ingredient) =>{
@@ -72,7 +76,6 @@ export default function RandomCocktailGenerator(){
                 </div>
                 :''
             }
-            <button id='next' onClick={handleRandom}>Next</button>
 
         </div>
     )
