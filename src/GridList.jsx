@@ -108,10 +108,10 @@ const Cocktail = (props) =>{
         alcoholic=true;
 
     return(
-        <div className="p-C-cocktailCard_wrapper" id= {id}>
+        <div className="CC-C-cocktailCard_wrapper" id= {id}>
             <img src={imgSrc} alt={name + " cocktail"}/>
             <h3>{name}</h3> 
-            <p className={alcoholic ? 'p-C-cocktailCard-tag_alcoholic': 'p-C-cocktailCard-tag_non-alcoholic'}>{alcoholic ? 'alcholic': 'non-alcoholic'}</p>
+            <p className={alcoholic ? 'CC-C-cocktailCard-tag_alcoholic': 'CC-C-cocktailCard-tag_non-alcoholic'}>{alcoholic ? 'alcholic': 'non-alcoholic'}</p>
         </div>
     )
 }

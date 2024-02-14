@@ -2,7 +2,7 @@ import React, { useState }  from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import logo from "./images/craftedlogo.png";
-
+import { Link } from "react-router-dom";
 export default function Header(){
     const [menu, setMenu] = useState(false);
 
@@ -25,10 +25,10 @@ export function Navigation(){
     return(
         <nav className='CC-C-nav_list'>
                 <li>
-                    <a href='#' data-testid='navLink'>Discover</a>
+                    <Link to='/random' data-testid='navLink'>Random Cocktail Generator</Link>
                 </li>
                 <li>
-                    <a href='#' data-testid='navLink'>Search Cocktails</a>
+                    <Link to='/search' data-testid='navLink'>Search Cocktails</Link>
                 </li>
                 <li>
                     <a href='#' data-testid='navLink'>Meet the author</a>
