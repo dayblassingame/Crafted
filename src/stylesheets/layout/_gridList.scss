@@ -1,10 +1,9 @@
 .CC-L-gridList{
-    display: flex;
+    display: block;
     position: relative;
     height: fit-content;
     width: 100vw;
     padding-top: 6rem;
-    flex-wrap: wrap;
 
     span{
         display: flex;
@@ -29,16 +28,35 @@
         }
 
         button{
-            width: 15%;
-            border: 1px solid $orange;
-            background-color: $white;
-            color: $orange;
+            width: auto;
+        }
+    }
 
-            &:focus{
-                background-color: $orange;
-                color: $white;
-            }
+    button{
+        height: 3rem;
+        padding: 0 5%;
+        margin: auto;
+        border: 1px solid $orange;
+        background-color: $white;
+        color: $orange;
 
+        &:focus{
+            background-color: $orange;
+            color: $white;
+        }
+
+    }
+
+    div{
+        display: flex;
+        flex: row;
+        position: relative;
+        height: fit-content;
+        flex-wrap: wrap;
+
+        button{
+            width: 70%;
+            margin: 2rem auto;
         }
     }
 }

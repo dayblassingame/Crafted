@@ -3,14 +3,14 @@
     width: 95%;
     height: fit-content;
     margin: 2rem auto;
-    border-top: 1px solid orange;
+    border-top: 1px solid $orange;
     overflow: hidden;
 
     h4{
         display: block;
         text-align: center;
         margin: 10px 0px;
-        color: orange;
+        color: $orange;
     }
 
     .CC-C-footer_navLinks{
@@ -23,13 +23,13 @@
             list-style: none;
 
             a{
-                color: darkgrey;
+                color: $grey;
                 text-decoration: none;
 
                 &:hover{
-                    color: orange;
+                    color: $orange;
                     text-decoration: underline;
-                    text-decoration-color: orange;
+                    text-decoration-color: $orange;
                 }
             }
         }
@@ -41,12 +41,12 @@
         text-align: center;
         a{
             text-decoration: none;
-            color: darkgrey;
+            color: $grey;
 
             &:hover{
-                color: orange;
+                color: $orange;
                 text-decoration: underline;
-                text-decoration-color: orange;
+                text-decoration-color: $orange;
             }
 
         }
@@ -54,7 +54,7 @@
         p{
             display: block;
             margin: 0;
-            color: darkgrey;
+            color: $grey;
         }
     }
     

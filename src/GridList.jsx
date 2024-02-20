@@ -73,22 +73,26 @@ export default function GridList (){
                     <input type='text' placeholder="Search by name or ingredient" value={search} onChange={handleSearch}/>
                     <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                 </span>
-                {cocktailList!=empty ? 
-                    cocktailList.map((cocktail)=>{
-                        if(cocktail.strDrink != undefined){
-                            return(
-                                <Cocktail key={cocktail.idDrink}
-                                id={cocktail.idDrink}
-                                name={cocktail.strDrink}
-                                img  ={cocktail.strDrinkThumb}
-                                alcoholic={cocktail.strAlcoholic}
-                                />
-                            )
-                        }else{
-                            return;
-                        }
-                        
-                    }):<h4>No results found</h4>
+                {cocktailList!=empty ?
+                    <div className='CC-L-gridList_results'> 
+                        {cocktailList.map((cocktail)=>{
+                            if(cocktail.strDrink != null && cocktail.strDrinkThumb != null){
+                                return(
+                                    <Cocktail key={cocktail.idDrink}
+                                    id={cocktail.idDrink}
+                                    name={cocktail.strDrink}
+                                    img  ={cocktail.strDrinkThumb}
+                                    alcoholic={cocktail.strAlcoholic}
+                                    />
+                                )
+                            }else{
+                                return;
+                            }
+                            
+                        })}
+                        <button onClick={()=>window.scrollTo(0,0)}>Return to top</button>
+                    </div>
+                    :<h4>No results found</h4>
                 }
             </div>
         )
