@@ -4,6 +4,7 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import logo from "./images/craftedlogo.png";
 import { Link } from "react-router-dom";
 
+
 export default function Header(){
     const [menu, setMenu] = useState(false);
     

@@ -1,10 +1,8 @@
 import React from "react";
-import {cleanup, render, screen, waitFor, waitForElementToBeRemoved} from '@testing-library/react';
+import {cleanup, render, screen, waitFor} from '@testing-library/react';
 import '@testing-library/jest-dom';
 const axios = require('axios');
 import Hero from "../Hero";
-import { act } from "react-test-renderer";
-const MockAdapter = require('axios-mock-adapter');
 
 describe('TheCoctailDB API test', ()=>{
 

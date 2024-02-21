@@ -89,8 +89,13 @@ export default function GridList (){
                                 return;
                             }
                             
-                        })}
-                        <button onClick={()=>window.scrollTo(0,0)}>Return to top</button>
+                        })
+                        }
+
+                        {cocktailList.length >= 4 ?
+                            <button data-testid='returnBtn' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
+                        }
+
                     </div>
                     :<h4>No results found</h4>
                 }
@@ -104,7 +109,7 @@ export default function GridList (){
 const Cocktail = (props) =>{
     const name = props.name;
     const imgSrc = props.img;
-    const id = props.ig;
+    const id = props.id;
 
     let alcoholic=false;
 
@@ -112,10 +117,10 @@ const Cocktail = (props) =>{
         alcoholic=true;
 
     return(
-        <div className="CC-C-cocktailCard_wrapper" id= {id}>
+        <div className="CC-C-cocktailCard_wrapper" data-testid={id} id= {id}>
             <img src={imgSrc} alt={name + " cocktail"}/>
             <h3>{name}</h3> 
-            <p className={alcoholic ? 'CC-C-cocktailCard-tag_alcoholic': 'CC-C-cocktailCard-tag_non-alcoholic'}>{alcoholic ? 'alcholic': 'non-alcoholic'}</p>
+            <p className={alcoholic ? 'CC-C-cocktailCard-tag_alcoholic': 'CC-C-cocktailCard-tag_non-alcoholic'}>{alcoholic ? 'alcoholic': 'non-alcoholic'}</p>
         </div>
     )
 }

@@ -1,13 +1,21 @@
 import React from 'react';
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import Header from '../Header';
+import {MemoryRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
 
-afterEach(cleanup);
+beforeAll(() => {
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    )
+  })
+  afterEach(cleanup);
+
 
 test('Should toggle navbar when hamburger menu is clicked',()=>{
-    render(<Header/>);
-
+    
     const navBtn = screen.getByTestId('navBtn');
     expect(navBtn).toBeInTheDocument();
 
