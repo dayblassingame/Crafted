@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "./Api";
 import Loading from "./Loading";
+import logo from "./images/craftedlogo.png";
+import {faX, } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 export default function RandomCocktailGenerator(){
     const apiKey = 'v2/9973533'
@@ -46,20 +51,17 @@ export default function RandomCocktailGenerator(){
 
     return(
         loading ? <Loading/> :
-        <div className='CC-C-randomCocktailGenerator_container_wrapper'>
-            <span className='CC-C-randomCocktailGenerator_heading_img_wrapper'>
-                <img src={headingImg.strDrinkThumb} alt="Rum Punch Cocktail" />
-                <span className="overlay"></span>
-                <h1>Random Refreshments</h1>
-            </span>
+        <div data-testid = 'headingImg' className='CC-C-randomCocktailGenerator_container_wrapper'>
+
             <h4>Can't decide on a cocktail? Let us choose for you!</h4>
+
 
             {!loading ? 
                 <div className="CC-C-randomCocktailGenerator_container">
-                    <h2>{currentCocktail.strDrink}</h2>
                     <img src={currentCocktail.strDrinkThumb} />
+                    <h2>{currentCocktail.strDrink}</h2>
 
-                    <button id='next' onClick={handleRandom}>Choose again</button>
+                    <button data-testid='next' onClick={handleRandom} className="button">Choose again</button>
 
                     <ul>
                         <label>Ingredients</label>
@@ -81,13 +83,13 @@ export default function RandomCocktailGenerator(){
     )
 }
 
-function getIngredients(cocktail){
+export function getIngredients(cocktail){
     let counter = 1;
     let ingredient = cocktail['strIngredient' + counter];
     let measurement = cocktail['strMeasure' + counter];
     let ingredientArray = [];
 
-    while(ingredient != null){
+    while(ingredient != null && ingredient!=''){
         if(measurement ==null)         
             ingredientArray.push(ingredient);
         else ingredientArray.push(measurement + ' ' + ingredient);

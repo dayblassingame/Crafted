@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchData, fetchIngredientData } from "./Api";
+import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -16,40 +17,27 @@ export default function GridList (){
     useEffect(()=>{
         const debounceFetch = setTimeout(()=>{
             const searchNameEndpoint = 'https://www.thecocktaildb.com/api/json/' + apiKey + '/search.php?s='+ search;
-            const searchIngEndpoint = 'https://www.thecocktaildb.com/api/json/'+ apiKey + '/filter.php?i=' + search;
             
             if(search==''){
                 fetchData(defaultEndpoint)
                 .then(res => {
                     setCocktailList(res);
+                    console.log(res);
                     setLoading(false)
                 })
             }else{
                 let searchNameResults = [];
-                let searchIngResults = [];
 
                 const req1 = fetchData(searchNameEndpoint).then((res) => {
                     if(res != null)
                         searchNameResults = res;
                     });
-                const req2 = fetchIngredientData(searchIngEndpoint).then((res) => {
-                    if(res != null)
-                        searchIngResults = res;
-                    });
 
-                Promise.all([req1, req2])
+                Promise.all([req1])
                 .then(() => {
-                    if(searchNameResults.length==0 && searchIngResults.length==0) return;
-                    if(searchIngResults.length==0){
-                         setCocktailList(searchNameResults);
-                        return;
-                    }
-                    if(searchNameResults.length==0) {
-                        setCocktailList(searchIngResults); 
-                        return;
-                    }
-                    else {
-                        setCocktailList(searchNameResults.concat(searchIngResults))
+                    console.log(searchNameResults);
+                    if(searchNameResults.length!=0) {
+                        setCocktailList(searchNameResults); 
                         return;
                     }
                 })
@@ -70,7 +58,7 @@ export default function GridList (){
         return(
             <div id='search' className="CC-L-gridList">
                 <span>
-                    <input type='text' placeholder="Search by name or ingredient" value={search} onChange={handleSearch}/>
+                    <input type='text' placeholder="Search by name" value={search} onChange={handleSearch}/>
                     <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                 </span>
                 {cocktailList!=empty ?
@@ -82,7 +70,7 @@ export default function GridList (){
                                     id={cocktail.idDrink}
                                     name={cocktail.strDrink}
                                     img  ={cocktail.strDrinkThumb}
-                                    alcoholic={cocktail.strAlcoholic}
+                                    alcoholic = {cocktail.strAlcoholic}
                                     />
                                 )
                             }else{
@@ -93,7 +81,7 @@ export default function GridList (){
                         }
 
                         {cocktailList.length >= 4 ?
-                            <button data-testid='returnBtn' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
+                            <button data-testid='return' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
                         }
 
                     </div>
@@ -117,10 +105,10 @@ const Cocktail = (props) =>{
         alcoholic=true;
 
     return(
-        <div className="CC-C-cocktailCard_wrapper" data-testid={id} id= {id}>
-            <img src={imgSrc} alt={name + " cocktail"}/>
+        <Link to={'/details/'+ id} className="CC-C-cocktailCard_wrapper" data-testid={id} id= {id}>
+            <img src={imgSrc} alt={name}/>
             <h3>{name}</h3> 
             <p className={alcoholic ? 'CC-C-cocktailCard-tag_alcoholic': 'CC-C-cocktailCard-tag_non-alcoholic'}>{alcoholic ? 'alcoholic': 'non-alcoholic'}</p>
-        </div>
+        </Link>
     )
 }

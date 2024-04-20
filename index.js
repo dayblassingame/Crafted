@@ -4,12 +4,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {App} from './src/App'
 const rootElement = document.getElementById('app');
-import Header from "./src/Header";
-import Hero from './src/Hero';
-import Footer from './src/Footer';
-import GridList from './src/GridList';
 import { createHashRouter, RouterProvider } from "react-router-dom";
+
+import Hero from './src/Hero';
+import GridList from './src/GridList';
 import RandomCocktailGenerator from './src/RandomCocktailGenerator';
+import Details from "./src/Details";
 
 const router = createHashRouter([
     {
@@ -28,6 +28,11 @@ const router = createHashRouter([
                 path: "/search",
                 element: <GridList/>,
             },
+            {
+                path: "/details/:id",
+                element:<Details/>
+
+            }
         ],
     }
 ])

@@ -1,6 +1,6 @@
 import React, { useState }  from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX, faSearch } from "@fortawesome/free-solid-svg-icons";
 import logo from "./images/craftedlogo.png";
 import { Link } from "react-router-dom";
 
@@ -18,8 +18,11 @@ export default function Header(){
                 <span className="CC-C-logo_span">
                     <a href="#"><img src={logo} alt="Logo image" className="CC-C-logo_img"/></a>
                 </span>
+                <button className='CC-C-nav_btn'> 
+                    <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} /></Link>
+                </button>
                 <button data-testid='navBtn' className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
-                    <FontAwesomeIcon icon={menu ? faX : faBars} />
+                    <FontAwesomeIcon className='FAicon' icon={menu ? faX : faBars} />
                 </button>
             </div>
             {menu && <Navigation handler={closeMenu} />}

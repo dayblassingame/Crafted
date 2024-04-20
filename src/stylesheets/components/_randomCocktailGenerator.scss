@@ -1,51 +1,16 @@
 .CC-C-randomCocktailGenerator_container_wrapper{
     display: block;
     height: auto;
-    width: 100vw;
-    overflow: hidden;
-    margin-bottom: 4rem;
-
-    .CC-C-randomCocktailGenerator_heading_img_wrapper{
-        display:block;
-        width: 100vw;
-        height: 40vh;
-        overflow: hidden;
-        margin-bottom: 1.5rem;
-
-        img{
-            z-index: -1;
-            display: block;
-            position: relative;
-            top: 5rem;
-            width: 100vw;
-            height: auto;
-            margin: auto;
-        }
-
-        h1{
-            display: block;
-            position: absolute;
-            z-index: 1;
-            width: 90%;
-            height: 5rem;
-            top: 27vh;
-            left: 5vw;
-            padding: 0.5rem;
-            line-height: 2rem;
-            font-size: 1.85rem;
-            text-align: center;
-            text-transform: capitalize;
-            color: $darkgrey;
-            background-color: $white;
-            border: 0.5px solid $orange;
-        }
-    }
+    width: 95vw;
+    overflow-x: hidden;
+    margin: 2rem auto;
+    
 
     h4{
         display: block;
         width: 89%;
         margin: auto;
-        margin-bottom: 3.5rem;
+        margin-bottom: 2rem;
 
         line-height: 1.6rem;
         font-size: 1.2rem;
@@ -59,23 +24,21 @@
         height: auto;
         width: 90%;
         margin: 1rem auto;
-        padding: 1.5rem 1rem;
-        border: 1px solid $orange;
+        //border: 1px solid $orange;
         background-color: white;
         color: $darkgrey;
 
         h2{
             text-align: center;
-            font-size: 1.6;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            line-height: 2.2rem;
         }
         
         img{
             display: block;
-            width: 85%;
+            width: 80%;
             height: auto;
-            margin: auto;
-            margin-bottom: 2rem;
+            margin: 1rem auto;
         }
 
         ul{
@@ -107,7 +70,8 @@
 
     }
 
-    button{
+
+    .button{
         display: block;
         height: 4rem;
         width: 50%;
