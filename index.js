@@ -7,9 +7,11 @@ const rootElement = document.getElementById('app');
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import Hero from './src/Hero';
-import GridList from './src/GridList';
+import Discover from "./src/Discover";
+import Search from './src/Search';
 import RandomCocktailGenerator from './src/RandomCocktailGenerator';
 import Details from "./src/Details";
+import Featured from "./src/Featured";
 
 const router = createHashRouter([
     {
@@ -18,7 +20,13 @@ const router = createHashRouter([
         children: [
             {
               path: "/",
-              element: <Hero />,
+              element: 
+                <div>
+                    <Hero />
+                    <Discover index='1' type={'Vodka'}/>
+                    <Discover index='2' type={'Tequila'}/>
+                    <Discover index='3' type={'Rum'} />
+                </div>,
             },
             {
                 path: "/random",
@@ -26,7 +34,11 @@ const router = createHashRouter([
             },
             {
                 path: "/search",
-                element: <GridList/>,
+                element: <Search/>,
+            },
+            {
+                path: "/featured",
+                element: <Featured/>,
             },
             {
                 path: "/details/:id",

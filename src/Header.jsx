@@ -19,7 +19,7 @@ export default function Header(){
                     <a href="#"><img src={logo} alt="Logo image" className="CC-C-logo_img"/></a>
                 </span>
                 <button className='CC-C-nav_btn'> 
-                    <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} /></Link>
+                    <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} onClick={()=>setMenu(false)}/></Link>
                 </button>
                 <button data-testid='navBtn' className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
                     <FontAwesomeIcon className='FAicon' icon={menu ? faX : faBars} />
@@ -35,13 +35,13 @@ export function Navigation(props){
     return(
         <nav className='CC-C-nav_list'>
                 <li>
-                    <Link to='/random' onClick = {props.handler} data-testid='navLink'>Random Cocktail Generator</Link>
-                </li>
-                <li>
                     <Link to='/search' onClick = {props.handler} data-testid='navLink'>Search Cocktails</Link>
                 </li>
                 <li>
-                    <a href='#' onClick = {props.handler} data-testid='navLink'>Meet the author</a>
+                    <Link to='/featured' onClick = {props.handler} data-testid='navLink'>Featured Cocktails</Link>
+                </li>
+                <li>
+                    <Link to='/random' onClick = {props.handler} data-testid='navLink'>Random Cocktail Generator</Link>
                 </li>
                 <li>
                     <a href='#' onClick = {props.handler} data-testid='navLink'>Contact</a>
