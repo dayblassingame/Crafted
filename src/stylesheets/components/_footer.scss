@@ -1,61 +1,72 @@
-.CC-C-footer_wrapper{
-    display: block;
-    width: 95%;
-    height: fit-content;
-    margin: 2rem auto;
-    border-top: 1px solid $orange;
+.CC-C-footer{
+    width: 100vw;
+    padding: $padding-extralarge $padding-small;
+    background-color: $chocolate;
+    border-top: 2px solid $cream;
     overflow: hidden;
 
-    h4{
-        display: block;
-        text-align: center;
-        margin: 10px 0px;
-        color: $orange;
-    }
+}
 
-    .CC-C-footer_navLinks{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+.CC-C-footer_wrapper{
+    display: flex;
+    height: fit-content;
 
-        li{
-            width:20%;
-            list-style: none;
+    span{
+        width: 50%;
+        margin: $margin-none $margin-small;
 
-            a{
-                color: $grey;
-                text-decoration: none;
-
-                &:hover{
-                    color: $orange;
-                    text-decoration: underline;
-                    text-decoration-color: $orange;
+        h4{
+            display: block;
+            text-align: left;
+            margin: $margin-small $margin-none;
+            color: $cream;
+        }
+    
+        .CC-C-footer_navLinks{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+    
+            li{
+                width: auto;
+                list-style: none;
+                margin: $margin-extrasmall $margin-none;
+    
+                a{
+                    color: $white;
+                    text-decoration: none;
+    
+                    &:hover{
+                        color: $cream;
+                        text-decoration: underline;
+                        text-decoration-color: $cream;
+                    }
                 }
             }
         }
-    }
-
-    .CC-C-footer_legal{
-        height: fit-content;
-        display: block;
-        text-align: center;
-        a{
-            text-decoration: none;
-            color: $grey;
-
-            &:hover{
-                color: $orange;
-                text-decoration: underline;
-                text-decoration-color: $orange;
-            }
-
-        }
-
-        p{
-            display: block;
-            margin: 0;
-            color: $grey;
-        }
-    }
     
+        .CC-C-footer_legal{
+            height: fit-content;
+
+            a{
+                text-decoration: none;
+                color: $white;
+    
+                &:hover{
+                    color: $white;
+                    text-decoration: underline;
+                    text-decoration-color: $white;
+                }
+    
+            }
+        }
+    }
+}
+
+p{
+    text-align: center;
+    display: block;
+    margin: $margin-medium $margin-none;
+    color: $white;
 }

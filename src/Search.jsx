@@ -71,13 +71,13 @@ export default function Search(){
     return(
 
         !isLoading ? 
-            <div id='search'>
-                <span>
+            <div id='search' className="CC-C-search_wrapper">
+                <div className="CC-C-search_container">
                     <input type='text' placeholder="Search by name" value={search} onChange={handleSearch}/>
                     <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                     <button><FontAwesomeIcon icon={faFilter} /></button>
-                </span>
-                <div id='filters'>
+                </div>
+                <div id='filters' className="CC-C-filters_container">
                     {
                         alcoholTypeFilter.map((alcoholType) => (
                             <span>

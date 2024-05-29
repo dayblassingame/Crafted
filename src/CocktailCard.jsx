@@ -7,9 +7,10 @@ export default function CocktailCard (props){
     const id = props.id;
 
     return(
-        <Link to={'/details/'+ id} className="CC-C-cocktailCard_wrapper" data-testid={id} id= {id}>
+        <div  className="CC-C-cocktailCard_wrapper">
             <img src={imgSrc} alt={name + ' Cocktail'}/>
-            <h3>{name}</h3> 
-        </Link>
+            <h4>{name}</h4> 
+            <Link to={'/details/'+ id} className="CC-C-cocktailCard_link" data-testid={id} id= {id}>View Recipe</Link>
+        </div>
     )
 }

@@ -5,33 +5,6 @@
     width: 100vw;
     margin: 2rem 0rem;
 
-    span{
-        display: flex;
-        justify-content: space-around;
-        width: 95%;
-        margin: 1rem auto;
-
-        input[type="text"]{
-            display: inline-block;
-            height: 3rem;
-            width: 80%;
-            border-radius: 0px;
-            border: 1px solid $orange;
-            padding: 5px;
-            font-size: 1rem;
-            color: $grey;
-
-            &:focus{
-                outline: 1px solid $orange;
-                border: 1px solid $orange;
-            }
-        }
-
-        button{
-            width: auto;
-        }
-    }
-
     button{
         height: 3rem;
         padding: 0 5%;

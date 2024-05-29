@@ -4,6 +4,7 @@ module.exports = {
     mode: "development",
     entry: path.resolve(__dirname, './index.js'),
     devtool: "eval-source-map",
+
     module: {
         rules: [
             {
@@ -19,7 +20,6 @@ module.exports = {
                     'style-loader',
                     'css-loader',
                     'sass-loader',
-                    'file-loader',
                 ]
             },
             {
@@ -29,7 +29,7 @@ module.exports = {
                     loader: 'file-loader',
                 },
                 ],
-              },
+            },
         ]
     },
     resolve: {

@@ -27,7 +27,7 @@ export default function Discover(props){
         }
 
         setCocktailList(temp)
-        setEndScroll(temp.length *120)
+        setEndScroll((temp.length * 180) + ((temp.length-2)* 20))
         return temp;
     }
 
@@ -73,13 +73,16 @@ export default function Discover(props){
         setPosition(position + 200);
     }
 
+    const handleCarouselScroll = (e) =>{
+        setPosition(e.target.scrollLeft)
+    }
 
     return(
-        <div>
+        <div id= {alcoholType + 'CocktailsSection'} className="CC-C-discover_container">
             <h2>{alcoholType + ' Cocktails'} </h2>
             <div className='CC-C-carousel_container'>
-                <button id={'scrollLeft' + index}className='CC-C-carousel_btn' onClick = {previous} ><FontAwesomeIcon icon={faChevronLeft} /></button>
-                <ul id={'carousel' + index} className='CC-C-carousel_list'>
+                <button id={'scrollLeft' + index}className='CC-C-carousel_btn' onClick = {previous} ><FontAwesomeIcon icon={faChevronLeft} className="FAicon"/></button>
+                <ul id={'carousel' + index} className='CC-C-carousel_list' onScroll={handleCarouselScroll}>
                     {cocktailList.map((cocktail) =>{
                         if(cocktail.strDrink != null && cocktail.strDrinkThumb != null){
                             return(
@@ -94,7 +97,7 @@ export default function Discover(props){
                         }
                     })}
                 </ul>
-                <button id={'scrollRight' + index} className='CC-C-carousel_btn' onClick={next}><FontAwesomeIcon icon={faChevronRight} /></button>
+                <button id={'scrollRight' + index} className='CC-C-carousel_btn' onClick={next}><FontAwesomeIcon icon={faChevronRight} className="FAicon"/></button>
             </div>
         </div> 
     )

@@ -1,5 +1,6 @@
 .CC-C-header{
     display: block;
+    overflow: hidden;
     position: fixed;
     z-index: 2;
 
@@ -8,10 +9,10 @@
 
     padding: $padding-large $padding-medium;
     justify-content: space-between;
-    background-color: $white;
-    border-bottom: 0.5px solid $chocolate;
+    background-color: $chocolate;
+    border-bottom: 0.5px solid $cream;
 
-    text-align: center;
+    text-align: left;
 
 
     @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
@@ -25,11 +26,11 @@
     height: auto;
     width: 170px;
     
-    margin-left: $margin-large;
+    margin-left: $margin-none;
 
     .CC-C-logo_img{
         display: block;
-        height: 2.5rem;
+        height: 2.2rem;
         width: auto;
         margin: auto;
 
@@ -62,7 +63,7 @@
             height: $font-size-small;
             width: $font-size-small;
             margin: auto;  
-            color: $chocolate;
+            color: $cream;
 
             @media screen and (min-width: $media-breakpoint-medium){
                 height: $font-size-medium;

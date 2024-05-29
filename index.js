@@ -23,9 +23,12 @@ const router = createHashRouter([
               element: 
                 <div>
                     <Hero />
-                    <Discover index='1' type={'Vodka'}/>
-                    <Discover index='2' type={'Tequila'}/>
-                    <Discover index='3' type={'Rum'} />
+                    <div id='discover' className='CC-C-section_wrapper'>
+                        <Discover index='1' type={'Vodka'}/>
+                        <Discover index='2' type={'Tequila'}/>
+                        <Discover index='3' type={'Rum'} />
+                    </div>
+                    
                 </div>,
             },
             {

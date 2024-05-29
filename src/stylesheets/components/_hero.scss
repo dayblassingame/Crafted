@@ -3,13 +3,13 @@
     display: block;
 
     width: 100vw;
-    height: 490px;
+    height: 550px;
     margin-top: $header-height;
     overflow: hidden;
     background-color: $overlay;
 
     @media screen and (orientation: landscape){
-        height: 400px;
+        height: 590px;
     }
 
     @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
@@ -20,7 +20,7 @@
         display: block;
         position: relative;
         height: auto; 
-        width: 90%;
+        width: 100%;
 
         margin: auto; margin-top: 47%;
         
@@ -28,12 +28,11 @@
 
         @media screen and (orientation: landscape){
             margin-top: 15%;
-            width: 80%;
+            width: 60%;
         }
     
-        @media screen and (min-width: $media-breakpoint-extrasmall) and (orientation: portrait){
+        @media screen and (min-width: $media-breakpoint-small) and (orientation: portrait){
             margin-top: 35%;
-            width: 70%;
         }
         
 
@@ -73,7 +72,9 @@
             animation: slide-from-right 2.5s 0s;
 
             &:hover{
-                background-color: rgba(0,0,0,0.3);
+                background-color: $overlay;
+                color: $cream;
+                border-color: $cream;
             }
         }
     }
@@ -92,5 +93,38 @@
         transform: translateX(100%);
     }to{
         transform: translateX(0%);
+    }
+}
+
+.CC-C-backgroundImg{
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    
+    z-index: -1;
+    overflow: hidden;
+
+    @media screen and (orientation: landscape){
+        height: 100%;
+    }
+
+    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+        height: 600px;
+    }
+
+    img{
+        height: 100%;
+
+        @media screen and (orientation: landscape){
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+            width: 140%;
+            height: auto;
+        }
+    
     }
 }

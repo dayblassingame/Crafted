@@ -1,54 +1,43 @@
 .CC-C-cocktailCard_wrapper{
-    height: auto;
-    min-width: 120px;
-    margin: 0.5rem auto;
-    padding: 5px 0px;
-    border-radius: 9px;
-    background-color: $lightgrey;
-    overflow: hidden;
+    display: inline-block;
+    height: 350px;
+    min-width: 180px;
+    width: 180px;
+    padding: $padding-large $padding-small;
+
+    background-color: transparent;
+
     text-decoration: none;
+    text-align: center;
+    
 
     img{
         display: block;
         height: auto;
-        width: 100%;
+        width: 95%;
+        margin: auto;
+        margin-bottom: $margin-medium;
     }
 
-    h3{
+    h4{
         display: block;
-        width: 100%;
-        height: auto;
-        padding: 0px 10px;
-        margin: 10px 0px;
-        text-align: left;
-        font-family: georgia;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: $darkgrey;
+        width: auto;
+        height: 70px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        color: $black;
+        margin-bottom: auto;
 
-        border-bottom: 1px solid $orange;
     }
 
-    .CC-C-cocktailCard-tag_alcoholic{
+    .CC-C-cocktailCard_link{
         display: block;
-        color: white;
-        width: fit-content;
-        margin-left: 10px;
-        padding: 2px;
-        background-color: $orange;
-        border-radius: 6px;
-        font-size: 0.9rem;
+        height: auto; width: auto;
+        padding: $padding-medium $padding-large;
+        text-decoration: none;
+        color: $cream;
+        background-color: $chocolate;
+        border: 1px solid $cream;
     }
 
-    .CC-C-cocktailCard-tag_non-alcoholic{
-        display: block;
-        color: white;
-        width: fit-content;
-        margin-left: 10px;
-        padding: 2px;
-        background-color: $blue;
-        border-radius: 6px;
-        font-size: 0.9rem;
-
-    }
 }

@@ -1,0 +1,14 @@
+.CC-C-discover_container{
+    width: 100vw;
+    height: auto; 
+    padding: $padding-medium;
+    background-color: $white;
+
+    h2{
+        padding-bottom: $padding-large;
+        color: $black;
+        letter-spacing: 2.5px;
+        width: fit-content;
+        margin: auto;
+    }
+}

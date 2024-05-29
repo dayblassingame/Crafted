@@ -1,4 +1,4 @@
-@font-face {
+@font-face{
     font-family: Futura;
     src: url('./stylesheets/fonts/FUTURA45LIGHT.TTF');
 }
@@ -12,7 +12,10 @@
 @import './stylesheets/components/hero';
 @import './stylesheets/components/loading';
 @import './stylesheets/components/footer';
+@import './stylesheets/components/search';
+@import './stylesheets/layout/discover';
 @import './stylesheets/layout/gridList';
+@import './stylesheets/layout/section';
 @import './stylesheets/components/cocktailCard';
 @import './stylesheets/components/carousel';
 @import './stylesheets/components/randomCocktailGenerator';
@@ -23,6 +26,7 @@ body{
     width: 100vw;
     overflow-x: hidden !important;
 }
+
 main{
     display: block;
     position: relative;
@@ -32,36 +36,3 @@ main{
     overflow-x: hidden;
 }
 
-.CC-C-backgroundImg{
-    display: block;
-    position: fixed;
-    height: 490px;
-    width: 100vw;
-    
-    margin-top: $header-height;
-    z-index: -1;
-    overflow: hidden;
-
-    @media screen and (orientation: landscape){
-        height: 400px;
-    }
-
-    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
-        height: 600px;
-    }
-
-    img{
-        height: 490px;
-
-        @media screen and (orientation: landscape){
-            width: 100%;
-            height: auto;
-        }
-
-        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
-            width: 140%;
-            height: auto;
-        }
-    }
-
-}
