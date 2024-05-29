@@ -1,6 +1,13 @@
+@font-face {
+    font-family: Futura;
+    src: url('./stylesheets/fonts/FUTURA45LIGHT.TTF');
+}
+
 @import './stylesheets/base/reset';
 @import './stylesheets/base/variables';
+@import './stylesheets/base/typography';
 @import './stylesheets/utilities/utilities.scss';
+@import './stylesheets/utilities/mixins.scss';
 @import './stylesheets/components/header';
 @import './stylesheets/components/hero';
 @import './stylesheets/components/loading';
@@ -11,9 +18,50 @@
 @import './stylesheets/components/randomCocktailGenerator';
 @import './stylesheets/components/details';
 
+body{
+    display: block;
+    width: 100vw;
+    overflow-x: hidden !important;
+}
 main{
     display: block;
     position: relative;
-    height: fit-content;
+    height: auto;
     width: 100vw;
+    background-color: transparent;
+    overflow-x: hidden;
+}
+
+.CC-C-backgroundImg{
+    display: block;
+    position: fixed;
+    height: 490px;
+    width: 100vw;
+    
+    margin-top: $header-height;
+    z-index: -1;
+    overflow: hidden;
+
+    @media screen and (orientation: landscape){
+        height: 400px;
+    }
+
+    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+        height: 600px;
+    }
+
+    img{
+        height: 490px;
+
+        @media screen and (orientation: landscape){
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+            width: 140%;
+            height: auto;
+        }
+    }
+
 }
