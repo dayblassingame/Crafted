@@ -3,19 +3,16 @@
     height: auto;
     width: 95vw;
     overflow-x: hidden;
-    margin: 2rem auto;
-    
+    margin: $margin-medium $margin-medium;
+
 
     h4{
         display: block;
-        width: 89%;
+        min-width: 80%;
         margin: auto;
-        margin-bottom: 2rem;
-
-        line-height: 1.6rem;
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: $darkgrey;
+        margin-bottom: $margin-large;
+        line-height: 22px;
+        color: $black;
         text-align: center;
     }
 
@@ -23,49 +20,83 @@
         display: block;
         height: auto;
         width: 90%;
-        margin: 1rem auto;
-        //border: 1px solid $orange;
-        background-color: white;
+        margin: $margin-small auto;
+        background-color: $white;
         color: $darkgrey;
+
+        @media screen and (min-width: $media-breakpoint-extralarge){
+            display: flex;
+        }
+
+        span{
+            @media screen and (min-width: $media-breakpoint-extralarge){
+                width: 50%;
+            }
+        }
 
         h2{
             text-align: center;
-            font-size: 2rem;
-            line-height: 2.2rem;
         }
         
         img{
             display: block;
             width: 80%;
             height: auto;
-            margin: 1rem auto;
+            margin: $margin-small auto;
+
+            @media screen and (min-width: $media-breakpoint-extralarge) {
+                width: 50%;
+            }
         }
 
         ul{
-            margin-bottom: 1.5rem;
-            line-height: 1.7rem;
+            margin-bottom: $margin-medium;
             list-style: square;
 
+            @media screen and (min-width: $media-breakpoint-extralarge){
+                margin-top: $margin-medium;
+            }
+
             li{
-                font-size: 1.1rem;
+                font-family: $font-family;
+                font-size: $font-size-small;
+                line-height: $line-height-medium;
+
+                @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                    font-size: $font-size-medium;
+                    line-height: $line-height-large;
+                }
             }
 
             ::marker{
-                color: $orange;
+                color: $chocolate;
             }
         }
 
         label{
             display: block;
-            margin-bottom: 0.7rem;
+            font-family: $font-family;
+            margin-bottom: $margin-small;
             font-weight: bold;
-            font-size: 1.3rem;
-            //color: $orange;
+            font-size: 26px;
+            color: $chocolate;
+
+            @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                font-size: 30px;
+            }
         }
 
         p{
-            line-height: 1.7rem;
-            font-size: 1.1rem;
+            font-family: $font-family;
+            line-height: $line-height-medium;
+            font-size: $font-size-small;
+            color: $darkgrey;
+            text-align: left;
+
+            @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                font-size: $font-size-medium;
+                line-height: $line-height-large;
+            }
         }
 
     }
@@ -75,17 +106,18 @@
         display: block;
         height: 4rem;
         width: 50%;
-        margin: 1.5rem auto;
+        margin: $margin-medium auto;
 
-        background-color: $orange;
-        color: white;
+        background-color: $chocolate;
+        color: $cream;
         font-size: 1.2rem;
-        border: 1px solid $white;
+        border: 2px solid $cream;
 
         &:hover{
-            color: $orange;
+            color: $chocolate;
             background-color: $white;
-            border: 1px solid $orange;
+            border: 1px solid $chocolate;
+            font-weight: 600;
         }
     }
 }

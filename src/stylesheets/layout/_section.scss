@@ -2,4 +2,19 @@
     background-color: $white;
     width: 100vw;
     padding: $header-height $padding-none;
+
+    .CC-C-section_featured{
+        text-align: center;
+
+        h2{
+            margin-top: $margin-medium;
+            color: $chocolate;
+        }
+    }
+
+    .CC-C-section_details{
+        text-align: center;
+        margin-top: $margin-medium;
+        color: $chocolate;
+    }
 }

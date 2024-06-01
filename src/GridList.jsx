@@ -28,13 +28,12 @@ export default function GridList (props){
                     })
                     }
 
-                    {cocktailList.length >= 4 ?
-                        <button data-testid='return' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
-                    }
-
                 </div>
                 :<h4>No results found</h4>
             }
+             {cocktailList.length >= 4 ?
+                        <button data-testid='return' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
+                    }
         </div>
     )
 }

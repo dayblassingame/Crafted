@@ -1,37 +1,36 @@
 .CC-L-gridList{
     display: block;
-    position: relative;
     height: fit-content;
+    min-height: 80vh;
     width: 100vw;
-    margin: 2rem 0rem;
+    margin: $margin-medium $margin-none;
 
-    button{
-        height: 3rem;
-        padding: 0 5%;
-        margin: auto;
-        border: 1px solid $orange;
-        background-color: $white;
-        color: $orange;
-
-        &:focus{
-            background-color: $orange;
-            color: $white;
-        }
-
-    }
-
-    div{
+    .CC-L-gridList_results{
         display: flex;
         flex-direction: row;
-        width: 95%;
-        margin: auto;
-        position: relative;
-        height: fit-content;
         flex-wrap: wrap;
+        row-gap: 60px;
+        justify-content: center;
+    }
 
-        button{
-            width: 70%;
-            margin: 2rem auto;
+    button{
+        display: block;
+        width: auto;
+        padding: $padding-medium $padding-extralarge;
+        margin: auto;
+
+        border: 1.5px solid $chocolate;
+        background-color: $white;
+
+        font-size: $font-size-small;
+        font-weight: 600;
+        color: $chocolate;
+
+        &:focus{
+            background-color: $chocolate;
+            font-weight: 400;
+            color: $cream;
         }
+
     }
 }

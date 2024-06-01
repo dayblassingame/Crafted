@@ -51,35 +51,41 @@ export default function RandomCocktailGenerator(){
 
     return(
         loading ? <Loading/> :
-        <div data-testid = 'headingImg' className='CC-C-randomCocktailGenerator_container_wrapper'>
+        <div className="CC-C-section_wrapper">
+        
+            <div data-testid = 'headingImg' className='CC-C-randomCocktailGenerator_container_wrapper'>
 
-            <h4>Can't decide on a cocktail? Let us choose for you!</h4>
+                <h4>Can't decide on a cocktail? Let us choose for you!</h4>
 
 
-            {!loading ? 
-                <div className="CC-C-randomCocktailGenerator_container">
-                    <img src={currentCocktail.strDrinkThumb} />
-                    <h2>{currentCocktail.strDrink}</h2>
+                {!loading ? 
+                    <div className="CC-C-randomCocktailGenerator_container">
+                        <span>
+                            <img src={currentCocktail.strDrinkThumb} />
+                            <h2>{currentCocktail.strDrink}</h2>
 
-                    <button data-testid='next' onClick={handleRandom} className="button">Choose again</button>
+                            <button data-testid='next' onClick={handleRandom} className="button">Choose again</button>
+                        </span>
+                        <span>
+                            <ul>
+                                <label>Ingredients</label>
+                                {getIngredients(currentCocktail).map((ingredient) =>{
+                                    return(
+                                        <li>{ingredient}</li>
+                                    )
+                                })}
+                            </ul>
+                            <span>
+                                <label>Instructions</label>
+                                <p>{currentCocktail.strInstructions}</p>
+                            </span>
+                        </span>
+                    </div>
+                    :''
+                }
 
-                    <ul>
-                        <label>Ingredients</label>
-                        {getIngredients(currentCocktail).map((ingredient) =>{
-                            return(
-                                <li>{ingredient}</li>
-                            )
-                        })}
-                    </ul>
-                    <span>
-                        <label>Instructions</label>
-                        <p>{currentCocktail.strInstructions}</p>
-                    </span>
-                </div>
-                :''
-            }
-
-        </div>
+            </div>
+         </div>
     )
 }
 

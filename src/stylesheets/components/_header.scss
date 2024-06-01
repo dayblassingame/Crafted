@@ -19,12 +19,16 @@
         height: $header-height-med;
     }
 
+    @media screen and (min-width: $media-breakpoint-large) and (orientation: portrait){
+        padding: $padding-large $padding-extralarge;
+    }
+
 }
 
 .CC-C-logo_span{
     display: inline-block;
     height: auto;
-    width: 170px;
+    width: auto;
     
     margin-left: $margin-none;
 
@@ -36,6 +40,7 @@
 
         @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait) {
             height: 3.3rem;
+            width: auto;
         }
  
     }
@@ -69,6 +74,10 @@
                 height: $font-size-medium;
                 width: $font-size-medium;
             }
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }
@@ -86,11 +95,19 @@
     background-color: $cream;
     text-align: left;
 
-    animation: slideIn 1s 0s;
+    animation: slideIn100 1s 0s;
 
     @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait) {
         padding: $padding-small $padding-large;
         margin-top: $header-height-med;
+    }
+
+    @media screen and (min-width: $media-breakpoint-extralarge) {
+        width: 35vw;
+        margin-left: 65vw;
+        animation: slideIn65 1s 0s;
+        border-left: 0.5px solid $chocolate;
+
     }
 
     li{
@@ -126,10 +143,19 @@
     }
 }
 
-@keyframes slideIn{
+@keyframes slideIn100{
+    from{
+        margin-left: 100%;
+
+    }to{
+        margin-left: 0%;
+    }
+}
+
+@keyframes slideIn65{
     from{
         margin-left: 100%;
     }to{
-        margin-left: 0%;
+        margin-left: 65%;
     }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faFilter, faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
 import GridList from './GridList';
 import { fetchData} from "./Api";
 import Loading from "./Loading";
@@ -13,6 +13,7 @@ export default function Search(){
     const [isLoading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
     const [filterList, setFilterList] = useState([]);
+    const [menu, setMenu] = useState(false);
 
     const [alcoholType, setAlcoholType] = useState('');
 
@@ -38,6 +39,20 @@ export default function Search(){
         
         return ()=> clearTimeout(debounceFetch);
     },[search])
+
+    useEffect(()=>{
+
+        if(window.screen.width >= 1100){
+            setMenu(true);
+            return;
+        }
+        
+        if(menu ===true){
+            document.body.style.overflowY = 'hidden';
+        }else{
+            document.body.style.overflowY = 'auto'
+        }
+    },[menu])
 
     useEffect(()=>{
         console.log('here')
@@ -75,21 +90,25 @@ export default function Search(){
                 <div className="CC-C-search_container">
                     <input type='text' placeholder="Search by name" value={search} onChange={handleSearch}/>
                     <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-                    <button><FontAwesomeIcon icon={faFilter} /></button>
+                    <button className="CC-C-search_filterBtn"><FontAwesomeIcon icon={!menu? faFilter: faX} onClick={()=> setMenu(!menu)}/></button>
                 </div>
-                <div id='filters' className="CC-C-filters_container">
+                <div className="CC-C-search_results">
+                    <div id='filters' className={menu ? "CC-C-filters_container": 'display_none'}>
+                        <h4>Filter by alcohol:</h4>
+                        {
+                            alcoholTypeFilter.map((alcoholType) => (
+                                <span>
+                                    <input type='radio' id={alcoholType} name='alcoholType' value={alcoholType} onChange={handleFilters}/>
+                                    <label>{alcoholType}</label>
+                                </span>
+                            ))
+                        }
+
+                    </div>
                     {
-                        alcoholTypeFilter.map((alcoholType) => (
-                            <span>
-                                <input type='radio' id={alcoholType} name='alcoholType' value={alcoholType} onChange={handleFilters}/>
-                                <label>{alcoholType}</label>
-                            </span>
-                        ))
+                        search !='' ? <GridList id='searchResults' list={cocktailList} />: <GridList id='filterResults' list={filterList}/>
                     }
                 </div>
-                {
-                    search !='' ? <GridList list={cocktailList} />: <GridList list={filterList}/>
-                }
             </div>
         : <Loading/>
     )

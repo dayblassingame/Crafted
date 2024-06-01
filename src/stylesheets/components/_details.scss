@@ -1,51 +1,72 @@
-.CC-C-details_mainwrapper{
-    width: 100%;
+.CC-C-details_container{
+    width: 85%;        
     height: auto;
-    overflow: scroll;
-    margin: 2.5rem 0rem;
+    margin: $margin-large auto;
+    padding: $padding-small $padding-none;
+    text-align: left;
 
-    .CC-C-details_container{
-        width: 90%;        
-        height: auto;
-        margin: auto;
-        padding: 1rem;
-        text-align: left;
-
-        background-color: $lightgrey;
-
-
-        img{
-            display: block;
-            width: 80%;
-            margin: auto;
-        }
-
-        h1{
-            width: 80%;
-            text-align: center;
-            margin: auto;
-            line-height: 4rem;
-            
-        }
-
-        p{
-            margin-bottom: 1rem;
-            line-height: 1.6rem;
-            text-align: left;
-        }
-
-        label{
-            font-weight: bold;
-            line-height: 2rem;
-            color: $orange;
-        }
-
-        ul{
-            margin: 1rem 0;
-            li{
-                line-height: 1.3rem;
-            }
-        }  
+    @media screen and (min-width: $media-breakpoint-extralarge){
+        display: flex;
     }
 
+    span{
+        height: auto;
+        @media screen and (min-width: $media-breakpoint-extralarge){
+            width: 50%;
+        }
+    }
+
+    img{
+        display: block;
+        width: 80%;
+        margin: auto;
+
+        @media screen and (min-width: $media-breakpoint-extralarge) {
+            width: 50%;
+        }
+    }
+
+    p{
+        font-family: $font-family;
+        line-height: $line-height-medium;
+        font-size: $font-size-small;
+        color: $darkgrey;
+        text-align: left;
+
+        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+            font-size: $font-size-medium;
+            line-height: $line-height-large;
+        }
+    }
+
+    label{
+        color: $chocolate;
+        font-family: $font-family;
+        margin-bottom: $margin-small;
+        font-weight: bold;
+        font-size: 26px;
+
+        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+            font-size: 30px;
+        }
+    }
+
+    ul{
+        padding: $padding-medium $padding-none;
+
+        li{
+            font-family: $font-family;
+            font-size: $font-size-small;
+            line-height: $line-height-medium;
+
+            @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                font-size: $font-size-medium;
+                line-height: $line-height-large;
+            }
+        }
+
+        ::marker{
+            color: $chocolate;
+        }
+    }  
 }

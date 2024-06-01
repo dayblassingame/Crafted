@@ -5,6 +5,13 @@
     border-top: 2px solid $cream;
     overflow: hidden;
 
+    p{
+        text-align: center;
+        display: block;
+        margin: $margin-extrasmall $margin-none;
+        color: $white;
+        text-transform: uppercase;
+    }
 }
 
 .CC-C-footer_wrapper{
@@ -62,11 +69,5 @@
             }
         }
     }
-}
-
-p{
-    text-align: center;
-    display: block;
-    margin: $margin-medium $margin-none;
-    color: $white;
+    
 }

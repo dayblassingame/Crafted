@@ -9,37 +9,38 @@ export default function Details(){
 
     const cocktailEndpoint = 'https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + id;
     const [loading, setLoading] = useState(true);
-    const [cocktailDetails, setCocktailDetails] = useState([]);
+    const [cocktail, setCocktail] = useState([]);
     const [ingredients, setIngredients] = useState([]);
 
     useEffect(()=>{
          fetchData(cocktailEndpoint).then(res => {
-            setCocktailDetails(res);
+            setCocktail(res[0]);
             setIngredients(getIngredients(res[0]));
             setLoading(false);
         })
     },[])
 
     return( loading ? <Loading/> :
-        <div className='CC-C-details_mainwrapper'>
-            {cocktailDetails.map((cocktail)=>(
+        <div className='CC-C-section_wrapper'>
+            <h2 className="CC-C-section_details">{cocktail.strDrink}</h2>
+
                 <div className="CC-C-details_container">
-                    <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
+                    <span>
+                        <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
+                    </span>
+                    <span>
+                        <p>This drink is usually served in a {cocktail.strGlass}</p>
 
-                    <h1>{cocktail.strDrink}</h1>
-                    <p>This drink is usually served in a {cocktail.strGlass}</p>
-
-                    <ul>
-                        <label>Ingredients</label>
-                        {ingredients.map((ingredient)=>(
-                            <li>{ingredient}</li>))
-                        }
-                    </ul>
-                    <label>Directions</label>
-                    <p>{cocktail.strInstructions}</p>
+                        <ul>
+                            <label>Ingredients</label>
+                            {ingredients.map((ingredient)=>(
+                                <li>{ingredient}</li>))
+                            }
+                        </ul>
+                        <label>Directions</label>
+                        <p>{cocktail.strInstructions}</p>
+                    </span>
                 </div>
-            ))}
-            
         </div>
     )
 }

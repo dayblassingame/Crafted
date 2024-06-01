@@ -9,7 +9,7 @@ export function App(){
     return(
         <div>
            <Header/>
-           <main>
+           <main id='main'>
                 <Outlet/>
            </main>
            <Footer/>

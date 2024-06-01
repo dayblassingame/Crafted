@@ -1,5 +1,4 @@
 .CC-C-cocktailCard_wrapper{
-    display: inline-block;
     height: 350px;
     min-width: 180px;
     width: 180px;
@@ -7,9 +6,12 @@
 
     background-color: transparent;
 
-    text-decoration: none;
+    justify-content: center;
     text-align: center;
-    
+
+    @media screen and (min-width: $media-breakpoint-extralarge) {
+        width: 200px;
+    }
 
     img{
         display: block;
@@ -21,7 +23,7 @@
 
     h4{
         display: block;
-        width: auto;
+        min-width: 70%;
         height: 70px;
         font-weight: 400;
         letter-spacing: 1.5px;

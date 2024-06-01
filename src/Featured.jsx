@@ -25,9 +25,11 @@ export default function Featured(){
     return(
         !isLoading ?
 
-        <div>
-            <h1>Featured Cocktails</h1>
-            <GridList list={cocktailList} />
+        <div className="CC-C-section_wrapper">
+            <div className="CC-C-section_featured">
+                <h2>Featured Cocktails</h2>
+                <GridList list={cocktailList} />
+            </div>
         </div>
 
         :<Loading/>

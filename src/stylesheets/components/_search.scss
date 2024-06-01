@@ -1,29 +1,42 @@
 .CC-C-search_wrapper{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 
     margin-top: $header-height;
+    padding: $padding-extrasmall $padding-none;
     background: $white;
 
     .CC-C-search_container{
         display: flex;
-        width: 91%;
+        width: 99%;
         padding: $padding-large $padding-none;
-        margin: auto;
+        margin: $margin-small auto;
         height: auto;
+
+        justify-content: center;
+
+        @media screen and (min-width: $media-breakpoint-extralarge) {
+            width: 70%;
+        }
+
 
         input[type="text"]{
             display: inline-block;
             height: 3rem;
-            width: 270px;
             border: 1px solid $chocolate;
             padding: $padding-small;
             font-size: 1rem;
             color: $black;
+            flex-grow: 0.8;
 
             &:focus{
                 outline: 1px solid $chocolate;
                 border: 1px solid $chocolate;
+            }
+
+            
+            @media screen and (min-width: $media-breakpoint-extralarge) {
+                margin-right: $margin-small;
             }
         }
 
@@ -41,16 +54,59 @@
     .CC-C-search_filterBtn{
         float: right;
         margin-right: $margin-medium;
-        height: 2rem;
         background-color: $chocolate;
         color: $cream;
+
+        @media screen and (min-width: $media-breakpoint-extralarge) {
+            display: none;
+        }
+    }
+
+    .CC-C-search_results{
+        display: block;
+        
+        @media screen and (min-width: $media-breakpoint-extralarge) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    #searchResults, #filterResults{
+        justify-content: center;
+        
+        @media screen and (min-width: $media-breakpoint-extralarge){
+            width: 85%;
+        }
     }
 
     .CC-C-filters_container{
         display: flex;
         flex-direction: column;
-
+        height: 70vh;
         width: 90%;
         padding: $padding-none $padding-large;
+
+        background-color: $white;
+
+        
+        @media screen and (min-width: $media-breakpoint-extralarge) {
+            width: 17%;
+        }
+
+        h4{
+            letter-spacing: 1px;
+            margin-bottom: $margin-small;
+        }
+
+        span{
+            width: 100%;
+            margin: $margin-extrasmall $margin-none;
+
+
+            input{
+                margin-right: $margin-small;
+                accent-color: $chocolate;
+            }
+        }
     }
 }

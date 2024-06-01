@@ -66,8 +66,9 @@
 
             color: $chocolate;
             font-size: $font-size-small;
-            font-weight: 300;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
 
             animation: slide-from-right 2.5s 0s;
 
@@ -75,6 +76,7 @@
                 background-color: $overlay;
                 color: $cream;
                 border-color: $cream;
+                font-weight: 400;
             }
         }
     }

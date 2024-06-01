@@ -10,6 +10,7 @@ export default function Header(){
     
     const closeMenu = () =>{
         setMenu(false);
+        window.scrollTo(0,0)
     }
 
     useEffect(()=>{
@@ -18,9 +19,11 @@ export default function Header(){
         }else{
             document.body.style.overflowY = 'auto'
         }
-
-
     },[menu])
+
+    useEffect(()=>{
+        document.getElementById('main').addEventListener('click', (()=>setMenu(false)))
+    })
 
     return(
         <header> 
@@ -30,7 +33,7 @@ export default function Header(){
                 </span>
                 <span className='CC-C-nav_btn_wrapper'>
                     <button className='CC-C-nav_btn'> 
-                        <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} onClick={()=>setMenu(false)}/></Link>
+                        <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} onClick={()=>closeMenu()}/></Link>
                     </button>
                     <button data-testid='navBtn' className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
                         <FontAwesomeIcon className='FAicon' icon={menu ? faX : faBars} />
