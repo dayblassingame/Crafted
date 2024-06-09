@@ -1,34 +1,53 @@
 import React from 'react';
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
+import {expect, test} from '@jest/globals';
+import { render, fireEvent, cleanup, screen } from '@testing-library/react';
 import Header from '../Header';
-import {MemoryRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
 
-beforeAll(() => {
-    render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    )
+describe ('should render header', ()=>{ 
+  afterEach(cleanup)
+
+  test('renders Header component by default', () => {
+    const { getByTestId } = render(
+      <HashRouter>
+          <Header/>
+          <main id='main'/>
+      </HashRouter>
+    );
+    expect(getByTestId('header')).toBeInTheDocument();
+  });
+
+  test.failing('navMenu should not be visible before navBtn is clicked', ()=>{
+      const { getByTestId } = render(
+        <HashRouter>
+          <Header/>
+          <main id='main'/>
+        </HashRouter>
+      );
+      expect(getByTestId('navMenu')).toBeInTheDocument();
   })
-  afterEach(cleanup);
 
+  test('navMenu should display when navBtn is clicked', ()=>{
+    const { getByTestId } = render(
+      <HashRouter>
+        <Header/>
+        <main id='main'/>
+      </HashRouter>
+    );
+    fireEvent.click(getByTestId('navMenuBtn'))
+    expect(getByTestId('navMenu')).toBeInTheDocument();
+  })
 
-test('Should toggle navbar when hamburger menu is clicked',()=>{
-    
-    const navBtn = screen.getByTestId('navBtn');
-    expect(navBtn).toBeInTheDocument();
-
-    let navLinks = screen.queryAllByTestId('navLink');
-    navLinks.forEach((link)=>{
-        expect(link).not.toBeInTheDocument();
-    })
-
-    fireEvent.click(navBtn);
-
-    navLinks = screen.queryAllByTestId('navLink');
-    navLinks.forEach((link)=>{
-        expect(link).toBeInTheDocument();
-    })
-    
+  test.failing('nav should close when search btn is clicked', ()=>{
+    const { getByTestId } = render(
+      <HashRouter>
+        <Header />
+        <main id='main'/>
+      </HashRouter>
+    );
+    fireEvent.click(getByTestId('navMenuBtn'))
+    fireEvent.click(getByTestId('searchBtn'))
+    expect(getByTestId('navMenu')).toBeInTheDocument();
+  })
 })

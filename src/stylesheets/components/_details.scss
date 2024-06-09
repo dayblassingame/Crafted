@@ -1,17 +1,18 @@
 .CC-C-details_container{
     width: 85%;        
     height: auto;
+    min-height: 70vh;
     margin: $margin-large auto;
     padding: $padding-small $padding-none;
     text-align: left;
 
-    @media screen and (min-width: $media-breakpoint-extralarge){
+    @media screen and (min-width: $media-breakpoint-large){
         display: flex;
     }
 
     span{
         height: auto;
-        @media screen and (min-width: $media-breakpoint-extralarge){
+        @media screen and (min-width: $media-breakpoint-large){
             width: 50%;
         }
     }
@@ -21,7 +22,11 @@
         width: 80%;
         margin: auto;
 
-        @media screen and (min-width: $media-breakpoint-extralarge) {
+        @media screen and (min-width: $media-breakpoint-medium) {
+            width: 60%;
+        }
+
+        @media screen and (min-width: $media-breakpoint-large) {
             width: 50%;
         }
     }
@@ -32,6 +37,7 @@
         font-size: $font-size-small;
         color: $darkgrey;
         text-align: left;
+        margin: $margin-medium $margin-none;
 
         @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
             font-size: $font-size-medium;

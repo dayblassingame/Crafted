@@ -28,10 +28,11 @@ export default function Search(){
             }else{
                 setLoading(true)
                 fetchData(searchEndpoint).then((res) => {
-                    setCocktailList(res)
-                    })
+                    if(typeof(res) != 'string')
+                        setCocktailList(res)
+                })
                 .catch(error => {
-                    console.error(error);
+                    setSearch('')
                 });
                 setLoading(false)
             }
@@ -55,7 +56,6 @@ export default function Search(){
     },[menu])
 
     useEffect(()=>{
-        console.log('here')
         let filterEndpoint = '';
         if(alcoholType === '')
             return
@@ -86,7 +86,7 @@ export default function Search(){
     return(
 
         !isLoading ? 
-            <div id='search' className="CC-C-search_wrapper">
+            <div id='search' data-testid='search' className="CC-C-search_wrapper">
                 <div className="CC-C-search_container">
                     <input type='text' placeholder="Search by name" value={search} onChange={handleSearch}/>
                     <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>

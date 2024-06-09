@@ -12,6 +12,7 @@ import Search from './src/Search';
 import RandomCocktailGenerator from './src/RandomCocktailGenerator';
 import Details from "./src/Details";
 import Featured from "./src/Featured";
+import Error from "./src/Error";
 
 const router = createHashRouter([
     {
@@ -23,7 +24,7 @@ const router = createHashRouter([
               element: 
                 <div>
                     <Hero />
-                    <div id='discover' className='CC-C-section_wrapper'>
+                    <div id='discover' data-testid='discover' className='CC-C-section_wrapper'>
                         <Discover index='1' type={'Vodka'}/>
                         <Discover index='2' type={'Tequila'}/>
                         <Discover index='3' type={'Rum'} />
@@ -34,19 +35,28 @@ const router = createHashRouter([
             {
                 path: "/random",
                 element: <RandomCocktailGenerator/>,
+                errorElement: <Error/>,
             },
             {
                 path: "/search",
                 element: <Search/>,
+                errorElement: <Error/>,
             },
             {
                 path: "/featured",
                 element: <Featured/>,
+                errorElement: <Error/>,
             },
             {
                 path: "/details/:id",
-                element:<Details/>
+                element:<Details/>,
+                errorElement: <Error/>,
 
+            },
+            {
+                path: "/error",
+                element:<Error/>,
+                errorElement: <Error/>,
             }
         ],
     }

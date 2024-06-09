@@ -14,6 +14,7 @@ export default function Discover(props){
 
     const apiKey = 'v2/9973533';
     const endpoint = 'https://www.thecocktaildb.com/api/json/' +apiKey + '/filter.php?i=' + alcoholType;
+    const [fetchFailed ,setFetchFailed] = useState(false)
 
     const setArray = (arr) =>{
         let temp = [];
@@ -21,7 +22,7 @@ export default function Discover(props){
         
         while(i<20 && i < arr.length){
             random = Math.floor(Math.random()*arr.length)
-            temp.push(arr[random]);
+            temp.push(arr[random]); 
             arr.splice(random,1); 
             i++;
         }
@@ -32,18 +33,20 @@ export default function Discover(props){
     }
 
     useEffect(() => {
-        try{
-            fetchData(endpoint)
-            .then(res => {
+        fetchData(endpoint)
+        .then(res => {
+            if(typeof(res) != 'string')
                 setArray(res)
-            })
-        }catch(err){
-            console.log(err)
-        }
+            else{
+                setFetchFailed(true)
+                console.log('fetch failed')
+            }
+        })
     },[])
 
     useEffect(() => {
-        updateArrows();
+        if(!fetchFailed)
+            updateArrows();
     })
 
     const updateArrows=(e)=>{
@@ -77,28 +80,31 @@ export default function Discover(props){
         setPosition(e.target.scrollLeft)
     }
 
-    return(
-        <div id= {alcoholType + 'CocktailsSection'} className="CC-C-discover_container">
-            <h2>{alcoholType + ' Cocktails'} </h2>
-            <div className='CC-C-carousel_container'>
-                <button id={'scrollLeft' + index}className='CC-C-carousel_btn' onClick = {previous} ><FontAwesomeIcon icon={faChevronLeft} className="FAicon"/></button>
-                <ul id={'carousel' + index} className='CC-C-carousel_list' onScroll={handleCarouselScroll}>
-                    {cocktailList.map((cocktail) =>{
-                        if(cocktail.strDrink != null && cocktail.strDrinkThumb != null){
-                            return(
-                                <CocktailCard key={cocktail.idDrink}
-                                id={cocktail.idDrink}
-                                name={cocktail.strDrink}
-                                img  ={cocktail.strDrinkThumb}
-                                />
-                            )
-                        }else{
-                            return;
-                        }
-                    })}
-                </ul>
-                <button id={'scrollRight' + index} className='CC-C-carousel_btn' onClick={next}><FontAwesomeIcon icon={faChevronRight} className="FAicon"/></button>
-            </div>
-        </div> 
-    )
+    if(fetchFailed)
+        return(<div><h1></h1></div>)
+    else
+        return(
+            <div id= {alcoholType + 'CocktailsSection'} className="CC-C-discover_container">
+                <h2>{alcoholType + ' Cocktails'} </h2>
+                <div className='CC-C-carousel_container'>
+                    <button id={'scrollLeft' + index}className='CC-C-carousel_btn' onClick = {previous} ><FontAwesomeIcon icon={faChevronLeft} className="FAicon"/></button>
+                    <ul id={'carousel' + index} className='CC-C-carousel_list' onScroll={handleCarouselScroll}>
+                        {cocktailList.map((cocktail) =>{
+                            if(cocktail.strDrink != null && cocktail.strDrinkThumb != null){
+                                return(
+                                    <CocktailCard key={cocktail.idDrink}
+                                    id={cocktail.idDrink}
+                                    name={cocktail.strDrink}
+                                    img  ={cocktail.strDrinkThumb}
+                                    />
+                                )
+                            }else{
+                                return;
+                            }
+                        })}
+                    </ul>
+                    <button id={'scrollRight' + index} className='CC-C-carousel_btn' onClick={next}><FontAwesomeIcon icon={faChevronRight} className="FAicon"/></button>
+                </div>
+            </div> 
+        )
 }

@@ -26,16 +26,16 @@ export default function Header(){
     })
 
     return(
-        <header> 
+        <header id='header' data-testid='header'> 
             <div className="CC-C-header">
                 <span className="CC-C-logo_span">
                     <a href="#"><img src={logo} alt="Logo image" className="CC-C-logo_img"/></a>
                 </span>
                 <span className='CC-C-nav_btn_wrapper'>
-                    <button className='CC-C-nav_btn'> 
-                        <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} onClick={()=>closeMenu()}/></Link>
+                    <button className='CC-C-nav_btn' data-testid='searchBtn' onClick={()=>closeMenu()}> 
+                        <Link to='/search'> <FontAwesomeIcon className='FAicon' icon={faSearch} /></Link>
                     </button>
-                    <button data-testid='navBtn' className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
+                    <button data-testid='navMenuBtn' className='CC-C-nav_btn' onClick={()=>{setMenu(!menu);}}>
                         <FontAwesomeIcon className='FAicon' icon={menu ? faX : faBars} />
                     </button>
                 </span>
@@ -48,7 +48,7 @@ export default function Header(){
 export function Navigation(props){
     
     return(
-        <nav className='CC-C-nav_list'>
+        <nav className='CC-C-nav_list' data-testid='navMenu'>
                 <li>
                     <Link to='/search' onClick = {props.handler} data-testid='navLink'>Search</Link>
                 </li>
@@ -59,7 +59,7 @@ export function Navigation(props){
                     <Link to='/random' onClick = {props.handler} data-testid='navLink'>Random Cocktail Generator</Link>
                 </li>
                 <li>
-                    <a href='#' onClick = {props.handler} data-testid='navLink'>Contact</a>
+                    <a href='https://dayblassingame.github.io/#contact' onClick = {props.handler} data-testid='navLink'>Contact</a>
                 </li>
             </nav>
     );

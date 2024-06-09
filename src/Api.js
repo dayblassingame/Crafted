@@ -6,28 +6,13 @@ export async function fetchData (url){
     await axios  
         .get(url)
         .then((response) =>{
-            data = (response.data.drinks);
-        }).catch((e)=>{console.log(e)})
+            if(response == undefined)
+                data='error'
+            else if(response.data.drinks == null)
+                data='error'
+            else{
+                data = (response.data.drinks);
+            }
+        }).catch((e)=>{data='error'})
     return data;
-}
-
-export async function fetchIngredientData (url){
-    let data = [];
-    let final = [];
-    
-    fetchData(url)
-    .then(res=> {
-        if(res != 'None Found')
-            data = res;
-    }).then(()=>{
-        data.forEach((cocktail)=>{
-            const individualEndpoint = 'https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i='+ cocktail.idDrink;
-            fetchData(individualEndpoint)
-            .then((res )=> {
-                let fullDetails = res[0];
-                final.push(fullDetails);
-            })
-        })
-    })
-    return final;
 }

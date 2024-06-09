@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { fetchData} from "./Api";
 import CocktailCard from './CocktailCard';
 import Loading from "./Loading";
 
@@ -8,7 +7,7 @@ export default function GridList (props){
    const empty = null;
 
     return(
-        <div id={ 'Results'} className="CC-L-gridList">
+        <div id={ props.id + 'Results'} className="CC-L-gridList">
             {cocktailList!=empty ?
                 <div className='CC-L-gridList_results'> 
                     {cocktailList.map((cocktail)=>{
@@ -17,7 +16,7 @@ export default function GridList (props){
                                 <CocktailCard key={cocktail.idDrink}
                                 id={cocktail.idDrink}
                                 name={cocktail.strDrink}
-                                img  ={cocktail.strDrinkThumb}
+                                img={cocktail.strDrinkThumb}
                                 alcoholic = {cocktail.strAlcoholic}
                                 />
                             )
@@ -31,9 +30,11 @@ export default function GridList (props){
                 </div>
                 :<h4>No results found</h4>
             }
-             {cocktailList.length >= 4 ?
-                        <button data-testid='return' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
-                    }
+            {cocktailList !=empty ?
+                cocktailList.length >= 4 ?
+                    <button data-testid='return' onClick={()=>window.scrollTo(0,0)}>Return to top</button> : ''
+                : ''
+            }
         </div>
     )
 }
