@@ -1,0 +1,88 @@
+//padding variables
+$padding-none: 0px;
+$padding-extrasmall: 2.5px;
+$padding-small: 5px;
+$padding-medium: 10px;
+$padding-large: 20px;
+$padding-extralarge: 40px;
+
+//margin variables
+$margin-none: 0px;
+$margin-extrasmall: 5px;
+$margin-small: 10px;
+$margin-medium: 20px;
+$margin-large: 40px;
+$margin-extralarge: 80px;
+
+//font variables
+$font-family: Futura;
+$font-size-extrasmall: 12px;
+$font-size-small: 18px;
+$font-size-medium: 1.3em;
+$font-size-large: 28px;
+$font-size-extralarge: 34px;
+
+//line-height
+$line-height-extrasmall: 16px;
+$line-height-small: 22px;
+$line-height-medium: 1.5em;
+$line-height-large: 32px;
+$line-height-extralarge: 38px;
+
+//media breakpoints
+$media-breakpoint-extralarge: 1100px;
+$media-breakpoint-large: 992px;
+$media-breakpoint-medium: 768px;
+$media-breakpoint-small: 600px;
+$media-breakpoint-extrasmall: 460px;
+
+//header height variables to adjust for fixed header
+$header-height: 70px;
+$header-height-med: 100px;
+$header-height-large: 110px;
+
+a{
+    font-family: $font-family;
+}
+
+h1{
+    font-family: $font-family;
+}
+
+h2{
+    font-family: $font-family;
+    font-size: $font-size-extralarge;
+    line-height: $line-height-extralarge;
+    font-weight: 600;
+
+    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+        font-size: 38px;
+        line-height: 42px;
+    }
+}
+
+h3{
+    font-family: $font-family;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+
+    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+        font-size: $font-size-extralarge;
+        line-height: $line-height-extralarge;
+    }
+}
+
+h4{
+    font-family: $font-family;
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+}
+
+button{
+    font-family: $font-family;
+}
+
+label{
+    font-family: $font-family;
+    font-size: $font-size-small;
+}

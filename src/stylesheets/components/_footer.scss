@@ -1,55 +1,76 @@
-.p-C-footer_wrapper{
-    display: block;
-    width: 95%;
-    height: fit-content;
-    margin: auto;
-    border-top: 1px solid orange;
+.CC-C-footer{
+    width: 100vw;
+    padding: $padding-extralarge $padding-medium;
+    background-color: $chocolate;
+    border-top: 2px solid $cream;
     overflow: hidden;
 
-    h4{
-        display: block;
+    p{
         text-align: center;
-        margin: 10px 0px;
-        color: orange;
+        display: block;
+        margin: $margin-extrasmall $margin-none;
+        color: $white;
+        text-transform: uppercase;
+    }
+}
+
+.CC-C-footer_wrapper{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    
+    @media screen and (min-width: $media-breakpoint-extralarge){
+        width: 60%;
     }
 
-    .p-C-footer_navLinks{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+    span{
+        width: 50%;
 
-        a{
-            width:20%;
-            color: darkgrey;
-
-            &:hover{
-                color: orange;
-                text-decoration: underline;
-                text-decoration-color: orange;
-            }
-        }
-    }
-
-    .p-C-footer_legal{
-        height: 2rem;
-        display: block;
-        text-align: center;
-        a{
-            text-decoration: none;
-            color: darkgrey;
-
-            &:hover{
-                color: orange;
-                text-decoration: underline;
-                text-decoration-color: orange;
-            }
-
-        }
-
-        p{
+        h4{
             display: block;
-            margin: 0;
-            color: darkgrey;
+            text-align: left;
+            margin: $margin-small $margin-none;
+            color: $cream;
+        }
+    
+        .CC-C-footer_navLinks{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+    
+            li{
+                width: auto;
+                list-style: none;
+                margin: $margin-extrasmall $margin-none;
+    
+                a{
+                    color: $white;
+                    text-decoration: none;
+    
+                    &:hover{
+                        color: $cream;
+                        text-decoration: underline;
+                        text-decoration-color: $cream;
+                    }
+                }
+            }
+        }
+    
+        .CC-C-footer_legal{
+            height: fit-content;
+
+            a{
+                text-decoration: none;
+                color: $white;
+    
+                &:hover{
+                    color: $white;
+                    text-decoration: underline;
+                    text-decoration-color: $white;
+                }
+    
+            }
         }
     }
     

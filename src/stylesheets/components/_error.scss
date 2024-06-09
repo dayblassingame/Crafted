@@ -1,0 +1,22 @@
+.CC-C-error{
+    margin-top: $header-height;
+    min-height: 80vh;
+
+    span{
+        display: block;
+        margin: $margin-medium;
+    }
+
+    h1{
+        display: block;
+        color: $chocolate;
+        font-size: 70px;
+        margin: $margin-small $margin-none;
+    }
+
+    p{
+        display: block;
+        color: $chocolate;
+        margin: $margin-small $margin-none;
+    }
+}

@@ -4,6 +4,7 @@ module.exports = {
     mode: "development",
     entry: path.resolve(__dirname, './index.js'),
     devtool: "eval-source-map",
+
     module: {
         rules: [
             {
@@ -18,7 +19,8 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    'sass-loader',]
+                    'sass-loader',
+                ]
             },
             {
                 test: /\.(svg|png|jpg|jpe?g|gif)$/i,
@@ -27,7 +29,7 @@ module.exports = {
                     loader: 'file-loader',
                 },
                 ],
-              },
+            },
         ]
     },
     resolve: {

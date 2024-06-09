@@ -1,0 +1,45 @@
+.CC-C-cocktailCard_wrapper{
+    height: 350px;
+    min-width: 180px;
+    width: 180px;
+    padding: $padding-large $padding-small;
+
+    background-color: transparent;
+
+    justify-content: center;
+    text-align: center;
+
+    @media screen and (min-width: $media-breakpoint-extralarge) {
+        width: 200px;
+    }
+
+    img{
+        display: block;
+        height: auto;
+        width: 95%;
+        margin: auto;
+        margin-bottom: $margin-medium;
+    }
+
+    h4{
+        display: block;
+        min-width: 70%;
+        height: 70px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        color: $black;
+        margin-bottom: auto;
+
+    }
+
+    .CC-C-cocktailCard_link{
+        display: block;
+        height: auto; width: auto;
+        padding: $padding-medium $padding-large;
+        text-decoration: none;
+        color: $cream;
+        background-color: $chocolate;
+        border: 1px solid $cream;
+    }
+
+}

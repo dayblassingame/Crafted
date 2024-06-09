@@ -1,0 +1,123 @@
+.CC-C-randomCocktailGenerator_container_wrapper{
+    display: block;
+    height: auto;
+    width: 95vw;
+    overflow-x: hidden;
+    margin: $margin-medium $margin-medium;
+
+
+    h4{
+        display: block;
+        min-width: 80%;
+        margin: auto;
+        margin-bottom: $margin-large;
+        line-height: 22px;
+        color: $black;
+        text-align: center;
+    }
+
+    .CC-C-randomCocktailGenerator_container{
+        display: block;
+        height: auto;
+        width: 90%;
+        margin: $margin-small auto;
+        background-color: $white;
+        color: $darkgrey;
+
+        @media screen and (min-width: $media-breakpoint-extralarge){
+            display: flex;
+        }
+
+        span{
+            @media screen and (min-width: $media-breakpoint-extralarge){
+                width: 50%;
+            }
+        }
+
+        h2{
+            text-align: center;
+        }
+        
+        img{
+            display: block;
+            width: 80%;
+            height: auto;
+            margin: $margin-small auto;
+
+            @media screen and (min-width: $media-breakpoint-extralarge) {
+                width: 50%;
+            }
+        }
+
+        ul{
+            margin-bottom: $margin-medium;
+            list-style: square;
+
+            @media screen and (min-width: $media-breakpoint-extralarge){
+                margin-top: $margin-medium;
+            }
+
+            li{
+                font-family: $font-family;
+                font-size: $font-size-small;
+                line-height: $line-height-medium;
+
+                @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                    font-size: $font-size-medium;
+                    line-height: $line-height-large;
+                }
+            }
+
+            ::marker{
+                color: $chocolate;
+            }
+        }
+
+        label{
+            display: block;
+            font-family: $font-family;
+            margin-bottom: $margin-small;
+            font-weight: bold;
+            font-size: 26px;
+            color: $chocolate;
+
+            @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                font-size: 30px;
+            }
+        }
+
+        p{
+            font-family: $font-family;
+            line-height: $line-height-medium;
+            font-size: $font-size-small;
+            color: $darkgrey;
+            text-align: left;
+
+            @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                font-size: $font-size-medium;
+                line-height: $line-height-large;
+            }
+        }
+
+    }
+
+
+    .button{
+        display: block;
+        height: 4rem;
+        width: 50%;
+        margin: $margin-medium auto;
+
+        background-color: $chocolate;
+        color: $cream;
+        font-size: 1.2rem;
+        border: 2px solid $chocolate;
+
+        &:hover{
+            color: $chocolate;
+            background-color: $white;
+            border: 1px solid $chocolate;
+            font-weight: 600;
+        }
+    }
+}

@@ -1,76 +1,161 @@
 .CC-C-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+    display: block;
+    overflow: hidden;
     position: fixed;
     z-index: 2;
-    height: 5rem;
-    width: 100%;
-    padding: 5px 5px;
 
-    background-color: white;
-    
+    height: $header-height;
+    width: 100vw;
+
+    padding: $padding-large $padding-medium;
+    justify-content: space-between;
+    background-color: $chocolate;
+    border-bottom: 0.5px solid $cream;
+
+    text-align: left;
+
+
+    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+        height: $header-height-med;
+    }
+
+    @media screen and (min-width: $media-breakpoint-large) and (orientation: portrait){
+        padding: $padding-large $padding-extralarge;
+    }
+
 }
 
 .CC-C-logo_span{
     display: inline-block;
-    height: 5rem;
-    width: auto; 
-    margin-top: 1rem;
-    padding-left: 25%;
+    height: auto;
+    width: auto;
     
+    margin-left: $margin-none;
 
     .CC-C-logo_img{
-        height: 3rem;
+        display: block;
+        height: 2.2rem;
         width: auto;
+        margin: auto;
+
+        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait) {
+            height: 3.3rem;
+            width: auto;
+        }
+ 
     }
 }
 
-.CC-C-nav_btn{
-    width: 10%;
-    height: 4rem;
+.CC-C-nav_btn_wrapper{
+    float: right;
+    width: auto;
+    margin-top: $margin-small;
 
-    background-color: transparent;
-    border: none;
-    font-size: 1.3rem;
-}
+    .CC-C-nav_btn{
+        display: inline-block;
+        margin: $margin-none $margin-extrasmall;
+        height: auto;
+        background-color: transparent;
+        border: none;
+    
+        @media screen and (min-width: $media-breakpoint-medium){
+            margin: $margin-none $margin-small;
+        }
 
-.CC-C-nav_list{
-    display: block;
-    width: 100vw;
-    height: 90vh;
-    padding: 10px;
-
-    position: fixed;
-    z-index: 1;
-    background-color: rgba(255,255,255, 1);
-    text-align: left;
-
-
-    animation: slideIn 2s 0s;
-    li{
-        display: table;
-        height: 4rem;
-        width: 95%;
-        margin: 0px 10px;
-        list-style: none;
         
-        border-bottom: 1px solid #4a4a48;
 
-        a{
-            display: table-cell;
-            vertical-align: middle;
-            text-decoration: none;
-            color: #4a4a48;
+        .FAicon{
+            height: $font-size-small;
+            width: $font-size-small;
+            margin: auto;  
+            color: $cream;
+
+            @media screen and (min-width: $media-breakpoint-medium){
+                height: $font-size-medium;
+                width: $font-size-medium;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }
 
-@keyframes slideIn{
+
+.CC-C-nav_list{
+    display: block;
+    width: 100vw;
+    height: 95vh;
+
+    margin-top: $header-height;
+    padding: $padding-small $padding-medium;
+    position: fixed;
+    z-index: 3;
+    background-color: $cream;
+    text-align: left;
+
+    animation: slideIn100 1s 0s;
+
+    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait) {
+        padding: $padding-small $padding-large;
+        margin-top: $header-height-med;
+    }
+
+    @media screen and (min-width: $media-breakpoint-extralarge) {
+        width: 35vw;
+        margin-left: 65vw;
+        animation: slideIn65 1s 0s;
+        border-left: 0.5px solid $chocolate;
+
+    }
+
+    li{
+        display: table;
+        height: 3.7rem;
+        width: 95%;
+        margin: $margin-none $margin-small;
+        list-style: none;
+
+        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+            margin: $margin-medium $margin-medium;
+        }
+        
+        a{
+            display: table-cell;
+            vertical-align: middle;
+            text-decoration: none;
+
+            font-size: $font-size-small;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $chocolate;
+
+            @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
+                font-size: $font-size-large
+            }
+
+            &:hover{
+                border-bottom: 1px solid $black;            
+            }
+        }
+
+    }
+}
+
+@keyframes slideIn100{
+    from{
+        margin-left: 100%;
+
+    }to{
+        margin-left: 0%;
+    }
+}
+
+@keyframes slideIn65{
     from{
         margin-left: 100%;
     }to{
-        margin-left: 0%;
+        margin-left: 65%;
     }
 }

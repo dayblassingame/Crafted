@@ -1,13 +1,38 @@
+@font-face{
+    font-family: Futura;
+    src: url('./stylesheets/fonts/FUTURA45LIGHT.TTF');
+}
+
 @import './stylesheets/base/reset';
+@import './stylesheets/base/variables';
+@import './stylesheets/base/typography';
 @import './stylesheets/utilities/utilities.scss';
+@import './stylesheets/utilities/mixins.scss';
 @import './stylesheets/components/header';
 @import './stylesheets/components/hero';
 @import './stylesheets/components/loading';
 @import './stylesheets/components/footer';
+@import './stylesheets/components/search';
+@import './stylesheets/layout/discover';
+@import './stylesheets/layout/gridList';
+@import './stylesheets/layout/section';
+@import './stylesheets/components/cocktailCard';
+@import './stylesheets/components/carousel';
+@import './stylesheets/components/randomCocktailGenerator';
+@import './stylesheets/components/details';
+@import './stylesheets/components/error';
+body{
+    display: block;
+    width: 100vw;
+    overflow-x: hidden !important;
+}
 
 main{
     display: block;
     position: relative;
-    height: fit-content;
+    height: auto;
     width: 100vw;
+    background-color: transparent;
+    overflow-x: hidden;
 }
+

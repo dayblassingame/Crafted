@@ -1,0 +1,43 @@
+.CC-C-carousel_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+    .CC-C-carousel_btn{
+        width: auto;
+        height: fit-content;
+        background-color: transparent;
+        border: none;
+
+        .FAicon{
+            height: $font-size-large;
+            width: auto;
+            margin: auto;  
+            color: $black;
+            background-color: transparent;
+            cursor: pointer;
+
+            @media screen and (min-width: $media-breakpoint-large){
+                display: inline;
+            }
+        }
+        
+    }
+
+    .CC-C-carousel_list{
+        display: flex;
+        flex-grow: 0.5;
+        width: 80%;
+        gap: $margin-medium;
+
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+
+        &::-webkit-scrollbar {
+            display: none; /* for Chrome, Safari, and Opera */
+          }
+    }
+}

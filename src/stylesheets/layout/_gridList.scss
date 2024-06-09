@@ -1,0 +1,36 @@
+.CC-L-gridList{
+    display: block;
+    height: fit-content;
+    min-height: 80vh;
+    width: 100vw;
+    margin: $margin-medium $margin-none;
+
+    .CC-L-gridList_results{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 60px;
+        justify-content: center;
+    }
+
+    button{
+        display: block;
+        width: auto;
+        padding: $padding-medium $padding-extralarge;
+        margin: auto;
+
+        border: 1.5px solid $chocolate;
+        background-color: $white;
+
+        font-size: $font-size-small;
+        font-weight: 600;
+        color: $chocolate;
+
+        &:focus{
+            background-color: $chocolate;
+            font-weight: 400;
+            color: $cream;
+        }
+
+    }
+}
