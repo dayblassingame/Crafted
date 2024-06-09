@@ -1,6 +1,6 @@
 .CC-C-footer{
     width: 100vw;
-    padding: $padding-extralarge $padding-small;
+    padding: $padding-extralarge $padding-medium;
     background-color: $chocolate;
     border-top: 2px solid $cream;
     overflow: hidden;
@@ -25,7 +25,6 @@
 
     span{
         width: 50%;
-        margin: $margin-none $margin-small;
 
         h4{
             display: block;
