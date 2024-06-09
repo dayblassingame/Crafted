@@ -79,6 +79,10 @@
                 cursor: pointer;
             }
         }
+
+        &:hover, &:active{
+            border: none;
+        }
     }
 }
 

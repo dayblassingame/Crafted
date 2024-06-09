@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/dayblassingame/Crafted"
   },
-  "homepage": "https://dayblassingame.github.io/crafted",
+  "homepage": "https://dayblassingame.github.io/Crafted",
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
