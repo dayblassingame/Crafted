@@ -1,8 +1,10 @@
 .CC-C-discover_container{
+    display: block;
     width: 100vw;
     height: auto; 
     padding: $padding-medium $padding-none;
     background-color: $white;
+    margin-bottom: $margin-medium;
 
     h2{
         padding-bottom: $padding-large;
