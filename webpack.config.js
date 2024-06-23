@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development",
@@ -23,7 +24,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(svg|png|jpg|jpe?g|gif)$/i,
+                test: /\.(svg|png|jpg|jpe?g|gif|png)$/i,
                 use: [
                   {
                     loader: 'file-loader',
@@ -35,8 +36,15 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js', '.jsx']
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            inject: true,
+            template: path.resolve(__dirname, './index.html'),
+          }),
+    ],
     output: {
-        path: path.resolve(__dirname, './src'),
+        path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js',
     },
     devServer: {

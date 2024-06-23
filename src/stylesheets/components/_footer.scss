@@ -2,7 +2,7 @@
     width: 100vw;
     padding: $padding-extralarge $padding-medium;
     background-color: $chocolate;
-    border-top: 2px solid $cream;
+    border-top: 2px solid $white;
     overflow: hidden;
 
     p{
@@ -24,13 +24,14 @@
     }
 
     span{
-        width: 50%;
+        width: auto;
+        margin-right: $margin-small;
 
         h4{
             display: block;
             text-align: left;
             margin: $margin-small $margin-none;
-            color: $cream;
+            color: $white;
         }
     
         .CC-C-footer_navLinks{

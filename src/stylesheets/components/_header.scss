@@ -9,8 +9,8 @@
 
     padding: $padding-large $padding-medium;
     justify-content: space-between;
-    background-color: $chocolate;
-    border-bottom: 0.5px solid $cream;
+    background-color: $white;
+    border-bottom: 0.5px solid $chocolate;
 
     text-align: left;
 
@@ -34,7 +34,7 @@
 
     .CC-C-logo_img{
         display: block;
-        height: 2.2rem;
+        height: 2.5rem;
         width: auto;
         margin: auto;
 
@@ -68,7 +68,7 @@
             height: $font-size-small;
             width: $font-size-small;
             margin: auto;  
-            color: $cream;
+            color: $chocolate;
 
             @media screen and (min-width: $media-breakpoint-medium){
                 height: $font-size-medium;
@@ -96,7 +96,7 @@
     padding: $padding-small $padding-medium;
     position: fixed;
     z-index: 3;
-    background-color: $cream;
+    background-color: $white;
     text-align: left;
 
     animation: slideIn100 1s 0s;
