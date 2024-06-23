@@ -5,10 +5,9 @@ import { faFilter, faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-ic
 import GridList from './GridList';
 import { fetchData} from "./Api";
 import Loading from "./Loading";
+import { key } from "../Apikey";
 
 export default function Search(){
-
-    const apiKey = 'v2/9973533';
     const [cocktailList, setCocktailList] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
@@ -21,7 +20,7 @@ export default function Search(){
 
     useEffect(()=>{
         const debounceFetch = setTimeout(()=>{
-            const searchEndpoint = 'https://www.thecocktaildb.com/api/json/' + apiKey + '/search.php?s='+ search;
+            const searchEndpoint = 'https://www.thecocktaildb.com/api/json/' + key + '/search.php?s='+ search;
             
             if(search==''){
                 return

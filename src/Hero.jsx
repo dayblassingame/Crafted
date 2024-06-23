@@ -1,7 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import axios from "axios";
-import Loading from './Loading';
-import { fetchData } from "./Api";
 import backgroundImg from './images/EspressoMartini.jpg'
 
 export default function Hero(){

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { fetchData } from "./Api";
 import Loading from "./Loading";
 import Error from './Error';
+import { key } from "../Apikey";
 
 export default function RandomCocktailGenerator(){
-    const apiKey = 'v2/9973533'
-    const apiEndpoint = 'https://www.thecocktaildb.com/api/json/'+ apiKey+ '/randomselection.php';
+    const apiEndpoint = 'https://www.thecocktaildb.com/api/json/'+  key + '/randomselection.php';
     const [randomList, setRandomList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentCocktail, setCurrentCocktail] = useState({});
