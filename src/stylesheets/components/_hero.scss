@@ -8,6 +8,8 @@
     overflow: hidden;
     background-color: $overlay;
 
+    border-bottom: 0.5px solid $chocolate;
+
     @media screen and (min-width: $media-breakpoint-small){
         height: 450px;
     }
@@ -27,7 +29,8 @@
         width: 100%;
 
         margin: auto; margin-top: 47%;
-        
+        text-shadow: 2px 2px 2px $overlay;
+
         text-align: center;
 
         @media screen and (orientation: landscape){
@@ -48,10 +51,16 @@
             border-bottom: 1px solid $white;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 2px $overlay;
             animation: slide-from-left 2.5s 0s;
 
+            @media screen and (min-width: $media-breakpoint-large) {
+                padding-bottom: $padding-medium;
+                font-size: 36px;
+                line-height: 40px;
+            }
+
         }
+
 
         h4{
             font-weight: 300;
@@ -78,8 +87,12 @@
 
             animation: slide-from-right 2.5s 0s;
 
+            @media screen and (min-width: $media-breakpoint-medium) {
+                padding: $padding-medium $padding-extralarge;
+            }
+
             &:hover{
-                background-color: $overlay;
+                background-color: $whiteOverlay;
                 color: $white;
                 border-color: $chocolate;
                 font-weight: 400;
