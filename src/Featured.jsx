@@ -4,15 +4,15 @@ import Loading from "./Loading";
 import { useState, useEffect } from "react";
 import { fetchData } from "./Api";
 import Error from "./Error";
+import { key } from "../Apikey";
 
 export default function Featured(){
-    const apiKey = 'v2/9973533';
     const [cocktailList, setCocktailList] = useState([]);
     const [isLoading, setLoading] = useState(true);
     const [fetchFailed, setFetchFailed] = useState(false);
 
     useEffect(()=>{
-        const endpoint = 'https://www.thecocktaildb.com/api/json/' + apiKey + '/popular.php';
+        const endpoint = 'https://www.thecocktaildb.com/api/json/' + key + '/popular.php';
         
         fetchData(endpoint).then((res) => {
             if(res != 'error' || typeof(res) == 'string')

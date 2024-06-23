@@ -37,9 +37,14 @@
         height: auto; width: auto;
         padding: $padding-medium $padding-large;
         text-decoration: none;
-        color: $cream;
-        background-color: $chocolate;
-        border: 1px solid $cream;
+        color: $chocolate;
+        background-color: $white;
+        border: 1px solid $chocolate;
+
+        &:hover{
+            background-color: $chocolate;
+            color: $cream;
+        }
     }
 
 }

@@ -8,12 +8,16 @@
     overflow: hidden;
     background-color: $overlay;
 
-    @media screen and (orientation: landscape){
-        height: 590px;
+    @media screen and (min-width: $media-breakpoint-small){
+        height: 450px;
     }
 
-    @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
-        height: 600px;
+    @media screen and (min-width: $media-breakpoint-medium){
+        height: 550px; 
+
+        @media screen and (orientation: portrait){
+            height: 550px;
+        }
     }
 
     .CC-C-hero_heading{
@@ -37,13 +41,14 @@
         
 
         h2{
-            color: $cream;
+            color: $white;
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-weight: 400;
             padding-bottom: $padding-small;
-            border-bottom: 1px solid $cream;
+            border-bottom: 1px solid $white;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 2px $overlay;
             animation: slide-from-left 2.5s 0s;
 
         }
@@ -51,7 +56,7 @@
         h4{
             font-weight: 300;
             padding: $padding-medium;
-            color: $cream;
+            color: $white;
             animation: slide-from-left 2.5s 0s;
         }
 
@@ -61,8 +66,9 @@
             width: 10rem;
             margin: $margin-small auto;
 
-            background-color: $cream;
+            background-color: $white;
             border: 1px solid $chocolate;
+            box-shadow: 5px 5px 10px $overlay;
 
             color: $chocolate;
             font-size: $font-size-small;
@@ -74,8 +80,8 @@
 
             &:hover{
                 background-color: $overlay;
-                color: $cream;
-                border-color: $cream;
+                color: $white;
+                border-color: $chocolate;
                 font-weight: 400;
             }
         }
@@ -123,9 +129,17 @@
             height: auto;
         }
 
-        @media screen and (min-width: $media-breakpoint-medium) and (orientation: portrait){
-            width: 140%;
+        @media screen and (min-width: $media-breakpoint-small){
+            width: 130%;
             height: auto;
+        }
+
+        @media screen and (min-width: $media-breakpoint-medium){
+            width: 120%;
+
+            @media screen and (orientation: portrait){
+                width: 140%;
+            }
         }
     
     }

@@ -3,6 +3,7 @@ import CocktailCard from "./CocktailCard";
 import { fetchData } from "./Api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { key } from "../Apikey";
 
 export default function Discover(props){
     const index = props.index;
@@ -12,8 +13,7 @@ export default function Discover(props){
     const [position, setPosition] = useState(0);
     const [endScroll, setEndScroll] = useState(0);
 
-    const apiKey = 'v2/9973533';
-    const endpoint = 'https://www.thecocktaildb.com/api/json/' +apiKey + '/filter.php?i=' + alcoholType;
+    const endpoint = 'https://www.thecocktaildb.com/api/json/' + key + '/filter.php?i=' + alcoholType;
     const [fetchFailed ,setFetchFailed] = useState(false)
 
     const setArray = (arr) =>{
