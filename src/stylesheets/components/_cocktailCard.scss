@@ -3,6 +3,7 @@
     min-width: 180px;
     width: 180px;
     padding: $padding-large $padding-small;
+    overflow: hidden;
 
     background-color: transparent;
 
@@ -24,7 +25,9 @@
     h4{
         display: block;
         min-width: 70%;
-        height: 70px;
+        height: 60px;
+        white-space: nowrap;
+
         font-weight: 400;
         letter-spacing: 1.5px;
         color: $black;
