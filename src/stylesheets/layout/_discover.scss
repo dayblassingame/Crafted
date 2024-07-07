@@ -6,11 +6,11 @@
     background-color: $white;
     margin-bottom: $margin-medium;
 
-    h2{
+    h3{
         padding-bottom: $padding-large;
         color: $black;
         letter-spacing: 2px;
         width: fit-content;
-        margin: auto;
+        margin: $margin-none auto;
     }
 }

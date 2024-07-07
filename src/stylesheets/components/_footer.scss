@@ -17,6 +17,7 @@
 .CC-C-footer_wrapper{
     display: flex;
     height: fit-content;
+    justify-content: space-between;
     width: 100%;
     
     @media screen and (min-width: $media-breakpoint-extralarge){

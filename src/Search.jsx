@@ -59,9 +59,9 @@ export default function Search(){
         if(alcoholType === '')
             return
         else if(alcoholType === 'non-alcoholic')
-            filterEndpoint = 'https://www.thecocktaildb.com/api/json/' + apiKey + '/filter.php?a=non_alcoholic';
+            filterEndpoint = 'https://www.thecocktaildb.com/api/json/' + key + '/filter.php?a=non_alcoholic';
         else  
-            filterEndpoint = 'https://www.thecocktaildb.com/api/json/' + apiKey + '/filter.php?i='+ alcoholType;
+            filterEndpoint = 'https://www.thecocktaildb.com/api/json/' + key + '/filter.php?i='+ alcoholType;
         setLoading(true)
         fetchData(filterEndpoint).then((res) => {
             setFilterList(res)
