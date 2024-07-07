@@ -1,9 +1,10 @@
 .CC-C-randomCocktailGenerator_container_wrapper{
     display: block;
     height: auto;
+    max-height: 80vh;
     width: 85vw;
     overflow-x: hidden;
-    margin: $margin-medium $margin-medium;
+    margin: $margin-small $margin-medium;
     position: fixed;
     z-index: 999;
     top: 55%;
@@ -12,6 +13,10 @@
 
     background-color: $white;
     border: 1px solid $chocolate;
+
+    @media screen and (min-width: $media-breakpoint-small) and (orientation: landscape){
+        width: 45vw;
+    }
 
 
     h4{
@@ -59,8 +64,8 @@
             height: auto;
             margin: $margin-small auto;
 
-            @media screen and (min-width: $media-breakpoint-extralarge) {
-                width: 50%;
+            @media screen and (min-width: $media-breakpoint-medium) {
+                width: 40%;
             }
         }
 
@@ -118,7 +123,7 @@
 
     .button{
         display: inline-block;
-        height: 4rem;
+        height: 3rem;
         width: 45%;
         margin: $margin-medium $margin-extrasmall;
         text-align: center;
