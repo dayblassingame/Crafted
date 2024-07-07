@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { fetchData } from "./Api";
 import Loading from "./Loading";
 import Error from './Error';
 import { key } from "../Apikey";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 export default function RandomCocktailGenerator(){
     const apiEndpoint = 'https://www.thecocktaildb.com/api/json/'+  key + '/randomselection.php';
@@ -11,6 +14,8 @@ export default function RandomCocktailGenerator(){
     const [currentCocktail, setCurrentCocktail] = useState({});
     const [index, setIndex] = useState(0);
     const [fetchFailed, setFetchFailed] = useState(false)
+
+    const [menu, setMenu] = useState('true');
 
     useEffect(()=>{
         if(randomList.length==0){
@@ -48,22 +53,27 @@ export default function RandomCocktailGenerator(){
     else{
         return(
             loading ? <Loading/> :
-            <div className="CC-C-section_wrapper">
-            
+            <div className= {menu ? "CC-C-section_wrapper" : "display_none"} id='randomGenerator'>
                 <div className='CC-C-randomCocktailGenerator_container_wrapper'>
+                    <button className="close" onClick={()=>setMenu(false)}>
+                        <FontAwesomeIcon className="icon" icon={faX} />
+                    </button>
 
                     <h4>Can't decide on a cocktail? Let us choose for you!</h4>
 
 
                     {!loading ? 
                         <div className="CC-C-randomCocktailGenerator_container">
-                            <span>
-                                <img src={currentCocktail.strDrinkThumb} />
+                            <div>
                                 <h2>{currentCocktail.strDrink}</h2>
+                                <img src={currentCocktail.strDrinkThumb} />
 
-                                <button data-testid='next' onClick={handleRandom} className="button">Choose again</button>
-                            </span>
-                            <span>
+                                <span>
+                                    <Link to={'/details/'+ currentCocktail.idDrink} onClick ={()=> window.scrollTo(0,0)} style={{textDecoration: "none"}} className="button" id={currentCocktail.idDrink}>View Recipe</Link>
+                                    <button data-testid='next' onClick={handleRandom} className="button">Choose again</button>
+                                </span>
+                            </div>
+                            {/* <span>
                                 <ul>
                                     <label>Ingredients</label>
                                     {getIngredients(currentCocktail).map((ingredient) =>{
@@ -76,7 +86,7 @@ export default function RandomCocktailGenerator(){
                                     <label>Instructions</label>
                                     <p>{currentCocktail.strInstructions}</p>
                                 </span>
-                            </span>
+                            </span> */}
                         </div>
                         :''
                     }

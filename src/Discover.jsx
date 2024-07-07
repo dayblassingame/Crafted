@@ -85,7 +85,7 @@ export default function Discover(props){
     else
         return(
             <div id= {alcoholType + 'CocktailsSection'} className="CC-C-discover_container">
-                <h2>{alcoholType + ' Cocktails'} </h2>
+                <h3>{alcoholType + ' Cocktails'} </h3>
                 <div className='CC-C-carousel_container'>
                     <button id={'scrollLeft' + index}className='CC-C-carousel_btn' onClick = {previous} ><FontAwesomeIcon icon={faChevronLeft} className="FAicon"/></button>
                     <ul id={'carousel' + index} className='CC-C-carousel_list' onScroll={handleCarouselScroll}>

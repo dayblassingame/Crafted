@@ -56,9 +56,6 @@ export function Navigation(props){
                     <Link to='/featured' onClick = {props.handler} data-testid='navLink'>Popular Drinks</Link>
                 </li>
                 <li>
-                    <Link to='/random' onClick = {props.handler} data-testid='navLink'>Random Cocktail Generator</Link>
-                </li>
-                <li>
                     <a href='https://dayblassingame.github.io/#contact' onClick = {props.handler} data-testid='navLink'>Contact</a>
                 </li>
             </nav>

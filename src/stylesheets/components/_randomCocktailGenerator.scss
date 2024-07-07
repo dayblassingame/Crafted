@@ -1,19 +1,54 @@
 .CC-C-randomCocktailGenerator_container_wrapper{
     display: block;
     height: auto;
-    width: 95vw;
+    max-height: 80vh;
+    width: 85vw;
     overflow-x: hidden;
-    margin: $margin-medium $margin-medium;
+    margin: $margin-small $margin-medium;
+    position: fixed;
+    z-index: 999;
+    top: 55%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+
+    background-color: $white;
+    border: 1px solid $chocolate;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    @media screen and (min-width: $media-breakpoint-small) and (orientation: landscape){
+        width: 45vw;
+    }
 
 
     h4{
         display: block;
         min-width: 80%;
-        margin: auto;
-        margin-bottom: $margin-large;
+        margin: $margin-large auto;
         line-height: 22px;
         color: $black;
         text-align: center;
+    }
+
+    .close{
+        float: right;
+        height: 30px; width: 30px;
+        margin: $margin-small $margin-extrasmall;
+        background-color: transparent; 
+
+        border: none;
+
+        .icon{
+            color: $chocolate;
+            height: 24px; width: 24px;
+        }
     }
 
     .CC-C-randomCocktailGenerator_container{
@@ -28,12 +63,6 @@
             display: flex;
         }
 
-        span{
-            @media screen and (min-width: $media-breakpoint-extralarge){
-                width: 50%;
-            }
-        }
-
         h2{
             text-align: center;
         }
@@ -44,8 +73,8 @@
             height: auto;
             margin: $margin-small auto;
 
-            @media screen and (min-width: $media-breakpoint-extralarge) {
-                width: 50%;
+            @media screen and (min-width: $media-breakpoint-medium) {
+                width: 40%;
             }
         }
 
@@ -101,13 +130,13 @@
 
     }
 
-
     .button{
-        display: block;
-        height: 4rem;
-        width: 50%;
-        margin: $margin-medium auto;
-
+        display: inline-block;
+        height: 3rem;
+        width: 45%;
+        margin: $margin-medium $margin-extrasmall;
+        text-align: center;
+        align-content: center;
         background-color: $chocolate;
         color: $cream;
         font-size: 1.2rem;

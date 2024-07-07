@@ -7,10 +7,10 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import Hero from './src/Hero';
 import Discover from "./src/Discover";
 import Search from './src/Search';
-import RandomCocktailGenerator from './src/RandomCocktailGenerator';
 import Details from "./src/Details";
 import Featured from "./src/Featured";
 import Error from "./src/Error";
+import RandomCocktailGenerator from "./src/RandomCocktailGenerator";
 
 const router = createHashRouter([
     {
@@ -20,20 +20,14 @@ const router = createHashRouter([
             {
               path: "/",
               element: 
-                <div>
+                <div id ='home'>
                     <Hero />
                     <div id='discover' data-testid='discover' className='CC-C-section_wrapper'>
                         <Discover index='1' type={'Vodka'}/>
                         <Discover index='2' type={'Tequila'}/>
                         <Discover index='3' type={'Rum'} />
                     </div>
-                    
                 </div>,
-            },
-            {
-                path: "/random",
-                element: <RandomCocktailGenerator/>,
-                errorElement: <Error/>,
             },
             {
                 path: "/search",
